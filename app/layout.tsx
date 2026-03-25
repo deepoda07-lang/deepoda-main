@@ -1,41 +1,39 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Deepoda – Akıllı Online Araçlar",
+    default: "Deepoda – İş Süreçlerini Kolaylaştıran Online Araçlar",
     template: "%s | Deepoda",
   },
   description:
-    "PDF, görsel ve dosya işlemleri için ücretsiz online araçlar. Tarayıcıda çalışır, verileriniz güvende.",
+    "PDF birleştir, görsel sıkıştır, arka plan sil ve daha fazlası. Saniyeler içinde, ücretsiz, tarayıcıda. Verileriniz asla sunucuya gitmez.",
+  keywords: ["pdf birleştir", "görsel sıkıştır", "arka plan sil", "online araçlar", "ücretsiz"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr" className="h-full antialiased">
-      <body className={`${geist.className} bg-white min-h-full flex flex-col`}>
-        <header className="border-b">
-          <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
-            <Link href="/" className="font-bold text-xl text-blue-600">deepoda</Link>
-            <nav className="flex gap-4 text-sm font-medium text-gray-600">
-              <Link href="/hakkimizda" className="hover:text-blue-600 transition-colors">Hakkımızda</Link>
-              <Link href="/iletisim" className="hover:text-blue-600 transition-colors">İletişim</Link>
-              <a
-                href="https://tools.deepoda.com"
-                className="bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Araçları Kullan
-              </a>
-            </nav>
+    <html lang="tr" className="scroll-smooth">
+      <body className={`${geist.className} bg-white text-gray-900`}>
+        <Navbar />
+        <main>{children}</main>
+        <footer className="bg-gray-950 text-gray-400 py-12">
+          <div className="max-w-6xl mx-auto px-5">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-2 font-bold text-lg text-white">
+                <span className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-xs">⚡</span>
+                deep<span className="text-blue-500">oda</span>
+              </div>
+              <p className="text-sm text-center">
+                Tüm işlemler tarayıcınızda gerçekleşir · Verileriniz sunucuya gitmez · GDPR uyumlu
+              </p>
+              <p className="text-sm">© 2025 Deepoda</p>
+            </div>
           </div>
-        </header>
-        <main className="flex-1">{children}</main>
-        <footer className="border-t py-8 text-center text-sm text-gray-400">
-          <p>© 2025 Deepoda · Tüm hakları saklıdır</p>
         </footer>
       </body>
     </html>
