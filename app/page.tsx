@@ -20,6 +20,8 @@ const allTools = [
   { icon: Lock,      title: "Lock PDF",            desc: "Password-protect your PDF with encryption.",                href: "https://tools.deepoda.com/pdf/lock",            badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   { icon: LockOpen,  title: "Unlock PDF",          desc: "Remove password protection from a PDF file.",               href: "https://tools.deepoda.com/pdf/unlock",          badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   { icon: Scissors,  title: "Crop PDF",            desc: "Trim the margins of every page in your PDF.",               href: "https://tools.deepoda.com/pdf/crop",            badge: "New",     color: "bg-orange-50 text-orange-600", cat: "PDF" },
+  { icon: Edit3,     title: "Fill PDF Form",       desc: "Fill in text fields, checkboxes and dropdowns in a PDF.",    href: "https://tools.deepoda.com/pdf/form-fill",       badge: "New",     color: "bg-teal-50 text-teal-600",     cat: "PDF" },
+  { icon: PenTool,   title: "Annotate PDF",        desc: "Draw, highlight and add text notes to your PDF.",            href: "https://tools.deepoda.com/pdf/annotate",        badge: "New",     color: "bg-violet-50 text-violet-600", cat: "PDF" },
   // Image
 
   { icon: Image,     title: "Compress Image",      desc: "Shrink JPG, PNG, and WEBP files without quality loss.",     href: "https://tools.deepoda.com/image/compress",      badge: "Popular", color: "bg-blue-50 text-blue-600",     cat: "Image" },
@@ -52,7 +54,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "36",    label: "Free Tools" },
+  { value: "38",    label: "Free Tools" },
   { value: "$0",    label: "Cost" },
   { value: "100%",  label: "In Browser" },
   { value: "GDPR",  label: "Compliant" },
