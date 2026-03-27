@@ -25,6 +25,7 @@ const allTools = [
   { icon: Wand2,     title: "Remove Background",   desc: "Remove the background in one click with AI.",               href: "https://tools.deepoda.com/image/remove-bg",     badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Image" },
   { icon: RefreshCw, title: "Convert Format",      desc: "Instantly convert between JPG ↔ PNG ↔ WEBP.",              href: "https://tools.deepoda.com/image/convert",       badge: null,      color: "bg-cyan-50 text-cyan-600",     cat: "Image" },
   { icon: Stamp,     title: "Add Watermark",       desc: "Stamp custom text watermark on your image.",                href: "https://tools.deepoda.com/image/watermark",     badge: "New",     color: "bg-indigo-50 text-indigo-600", cat: "Image" },
+  { icon: Edit3,     title: "Add Text to Image",   desc: "Click anywhere on the image to place custom text.",         href: "https://tools.deepoda.com/image/add-text",      badge: "New",     color: "bg-sky-50 text-sky-600",       cat: "Image" },
   // Convert
   { icon: FileOutput,title: "Word → PDF",          desc: "Convert your DOCX file to a professional PDF instantly.",   href: "https://tools.deepoda.com/convert/word-to-pdf",    badge: null, color: "bg-green-50 text-green-600",    cat: "Convert" },
   { icon: FileOutput,title: "Excel → PDF",         desc: "Convert XLSX/XLS files to PDF.",                           href: "https://tools.deepoda.com/convert/excel-to-pdf",   badge: null, color: "bg-emerald-50 text-emerald-600",cat: "Convert" },
@@ -50,7 +51,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "34",    label: "Free Tools" },
+  { value: "35",    label: "Free Tools" },
   { value: "$0",    label: "Cost" },
   { value: "100%",  label: "In Browser" },
   { value: "GDPR",  label: "Compliant" },
