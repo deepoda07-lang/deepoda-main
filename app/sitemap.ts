@@ -11,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${BASE_URL}/hakkimizda`,
+      url: `${BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/iletisim`,
+      url: `${BASE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,

@@ -7,45 +7,45 @@ const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Deepoda – İş Süreçlerini Kolaylaştıran Online Araçlar",
+    default: "Deepoda – Online Tools to Simplify Your Workflow",
     template: "%s | Deepoda",
   },
   description:
-    "PDF birleştir, görsel sıkıştır, arka plan sil ve daha fazlası. Saniyeler içinde, ücretsiz, tarayıcıda. Verileriniz asla sunucuya gitmez.",
-  keywords: ["pdf birleştir", "görsel sıkıştır", "arka plan sil", "online araçlar", "ücretsiz"],
+    "Merge PDFs, compress images, remove backgrounds and more. In seconds, free, right in your browser. Your data never leaves your device.",
+  keywords: ["merge pdf", "compress image", "remove background", "online tools", "free"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={`${geist.className} bg-white text-gray-900`}>
         <Navbar />
         <main>{children}</main>
         <footer className="bg-gray-950 text-gray-400 pt-16 pb-8">
           <div className="max-w-6xl mx-auto px-5">
-            {/* Üst kısım */}
+            {/* Top section */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
-              {/* Marka */}
+              {/* Brand */}
               <div className="col-span-2 md:col-span-1">
                 <div className="flex items-center gap-2 font-bold text-lg text-white mb-3">
                   <span className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-xs">⚡</span>
                   deep<span className="text-blue-500">oda</span>
                 </div>
                 <p className="text-sm leading-relaxed">
-                  Ücretsiz online araç platformu. Tüm işlemler tarayıcında, veriler sunucuya gitmiyor.
+                  Free online tool platform. All processing happens in your browser — data never leaves your device.
                 </p>
               </div>
 
-              {/* PDF Araçları */}
+              {/* PDF Tools */}
               <div>
-                <h4 className="text-white font-semibold text-sm mb-4">PDF Araçları</h4>
+                <h4 className="text-white font-semibold text-sm mb-4">PDF Tools</h4>
                 <ul className="space-y-2 text-sm">
                   {[
-                    ["PDF Birleştir", "/pdf/merge"],
-                    ["PDF Böl", "/pdf/split"],
-                    ["PDF Düzenle", "/pdf/edit"],
-                    ["PDF Filigran", "/pdf/watermark"],
-                    ["PDF İmzala", "/pdf/sign"],
+                    ["Merge PDF", "/pdf/merge"],
+                    ["Split PDF", "/pdf/split"],
+                    ["Edit PDF", "/pdf/edit"],
+                    ["PDF Watermark", "/pdf/watermark"],
+                    ["Sign PDF", "/pdf/sign"],
                   ].map(([label, path]) => (
                     <li key={path}>
                       <a href={`https://tools.deepoda.com${path}`} className="hover:text-white transition-colors">
@@ -56,14 +56,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
 
-              {/* Görsel & Dönüştür */}
+              {/* Image Tools */}
               <div>
-                <h4 className="text-white font-semibold text-sm mb-4">Görsel Araçları</h4>
+                <h4 className="text-white font-semibold text-sm mb-4">Image Tools</h4>
                 <ul className="space-y-2 text-sm">
                   {[
-                    ["Görsel Sıkıştır", "/image/compress"],
-                    ["Arka Plan Sil", "/image/remove-bg"],
-                    ["Format Dönüştür", "/image/convert"],
+                    ["Compress Image", "/image/compress"],
+                    ["Remove Background", "/image/remove-bg"],
+                    ["Convert Format", "/image/convert"],
                     ["Word → PDF", "/convert/word-to-pdf"],
                   ].map(([label, path]) => (
                     <li key={path}>
@@ -75,16 +75,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
 
-              {/* Video Araçları */}
+              {/* Video Tools */}
               <div>
-                <h4 className="text-white font-semibold text-sm mb-4">Video Araçları</h4>
+                <h4 className="text-white font-semibold text-sm mb-4">Video Tools</h4>
                 <ul className="space-y-2 text-sm">
                   {[
-                    ["Video Sıkıştır", "/video/compress"],
-                    ["Video Kes", "/video/trim"],
+                    ["Compress Video", "/video/compress"],
+                    ["Trim Video", "/video/trim"],
                     ["Video → MP3", "/video/to-mp3"],
                     ["Video → GIF", "/video/to-gif"],
-                    ["Video Birleştir", "/video/merge"],
+                    ["Merge Videos", "/video/merge"],
                   ].map(([label, path]) => (
                     <li key={path}>
                       <a href={`https://tools.deepoda.com${path}`} className="hover:text-white transition-colors">
@@ -95,15 +95,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
 
-              {/* Şirket */}
+              {/* Company */}
               <div>
                 <h4 className="text-white font-semibold text-sm mb-4">Deepoda</h4>
                 <ul className="space-y-2 text-sm">
                   {[
-                    ["Ana Sayfa", "/"],
-                    ["Hakkımızda", "/hakkimizda"],
-                    ["İletişim", "/iletisim"],
-                    ["Tüm Araçlar", "https://tools.deepoda.com"],
+                    ["Home", "/"],
+                    ["About", "/about"],
+                    ["Contact", "/contact"],
+                    ["All Tools", "https://tools.deepoda.com"],
                   ].map(([label, href]) => (
                     <li key={href}>
                       <a href={href} className="hover:text-white transition-colors">
@@ -115,10 +115,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </div>
 
-            {/* Alt çizgi */}
+            {/* Bottom line */}
             <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-              <p>© 2025 Deepoda · Tüm işlemler tarayıcınızda · GDPR uyumlu</p>
-              <p className="text-gray-600">Verileriniz asla sunucuya gitmez.</p>
+              <p>© 2025 Deepoda · All processing in your browser · GDPR compliant</p>
+              <p className="text-gray-600">Your data never leaves your device.</p>
             </div>
           </div>
         </footer>

@@ -30,17 +30,17 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          <Link href="/#nasil-calisir" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
-            Nasıl Çalışır?
+          <Link href="/#how-it-works" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+            How It Works
           </Link>
-          <Link href="/#araclar" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
-            Araçlar
+          <Link href="/#tools" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+            Tools
           </Link>
-          <Link href="/hakkimizda" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
-            Hakkımızda
+          <Link href="/about" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+            About
           </Link>
-          <Link href="/iletisim" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
-            İletişim
+          <Link href="/contact" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+            Contact
           </Link>
         </nav>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
             href="https://tools.deepoda.com"
             className="px-5 py-2 text-sm font-semibold bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-md shadow-blue-200"
           >
-            Araçları Kullan →
+            Use Tools →
           </a>
         </div>
 
@@ -66,15 +66,15 @@ export default function Navbar() {
       {/* Mobile nav */}
       {open && (
         <div className="md:hidden glass border-t px-5 py-4 flex flex-col gap-2">
-          <Link href="/#nasil-calisir" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>Nasıl Çalışır?</Link>
-          <Link href="/#araclar" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>Araçlar</Link>
-          <Link href="/hakkimizda" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>Hakkımızda</Link>
-          <Link href="/iletisim" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>İletişim</Link>
+          <Link href="/#how-it-works" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>How It Works</Link>
+          <Link href="/#tools" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>Tools</Link>
+          <Link href="/about" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>About</Link>
+          <Link href="/contact" className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>Contact</Link>
           <a
             href="https://tools.deepoda.com"
             className="mt-2 px-4 py-2.5 text-sm font-semibold bg-blue-600 text-white rounded-xl text-center"
           >
-            Araçları Kullan →
+            Use Tools →
           </a>
         </div>
       )}

@@ -10,53 +10,53 @@ import {
 
 const allTools = [
   // PDF
-  { icon: FileText,  title: "PDF Birleştir",     desc: "Birden fazla PDF'i tek belgeye birleştir.",         href: "https://tools.deepoda.com/pdf/merge",          badge: "Popüler", color: "bg-red-50 text-red-600",     cat: "PDF" },
-  { icon: Scissors,  title: "PDF Böl",            desc: "İstediğin sayfa aralığını ayrı dosyaya çıkar.",    href: "https://tools.deepoda.com/pdf/split",          badge: null,      color: "bg-orange-50 text-orange-600", cat: "PDF" },
-  { icon: Edit3,     title: "PDF Düzenle",        desc: "Sayfa sil, yeniden sırala, sürükle-bırak.",        href: "https://tools.deepoda.com/pdf/edit",           badge: null,      color: "bg-amber-50 text-amber-600",   cat: "PDF" },
-  { icon: Stamp,     title: "PDF Filigran",       desc: "Sayfalarına GİZLİ, TASLAK gibi damga ekle.",      href: "https://tools.deepoda.com/pdf/watermark",      badge: "Yeni",    color: "bg-yellow-50 text-yellow-600", cat: "PDF" },
-  { icon: PenTool,   title: "PDF İmzala",         desc: "İmzanı çiz ve PDF sayfasına göm.",                href: "https://tools.deepoda.com/pdf/sign",           badge: "Yeni",    color: "bg-rose-50 text-rose-600",     cat: "PDF" },
-  { icon: FileOutput,title: "PDF → Word",         desc: "PDF dosyasını Word formatına dönüştür.",           href: "https://tools.deepoda.com/pdf/to-word",        badge: null,      color: "bg-pink-50 text-pink-600",     cat: "PDF" },
-  // Görsel
-  { icon: Image,     title: "Görsel Sıkıştır",    desc: "JPG, PNG, WEBP dosyalarını kaliteli küçült.",      href: "https://tools.deepoda.com/image/compress",     badge: "Popüler", color: "bg-blue-50 text-blue-600",     cat: "Görsel" },
-  { icon: Wand2,     title: "Arka Plan Sil",      desc: "Yapay zeka ile arka planı tek tıkla kaldır.",      href: "https://tools.deepoda.com/image/remove-bg",    badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Görsel" },
-  { icon: RefreshCw, title: "Format Dönüştür",    desc: "JPG ↔ PNG ↔ WEBP arasında anında dönüştür.",     href: "https://tools.deepoda.com/image/convert",      badge: null,      color: "bg-cyan-50 text-cyan-600",     cat: "Görsel" },
-  // Dönüştür
-  { icon: FileOutput,title: "Word → PDF",         desc: "DOCX dosyanı anında profesyonel PDF'e çevir.",    href: "https://tools.deepoda.com/convert/word-to-pdf",    badge: null,     color: "bg-green-50 text-green-600",    cat: "Dönüştür" },
-  { icon: FileOutput,title: "Excel → PDF",        desc: "XLSX/XLS dosyanı PDF'e dönüştür.",                href: "https://tools.deepoda.com/convert/excel-to-pdf",   badge: null,     color: "bg-emerald-50 text-emerald-600",cat: "Dönüştür" },
-  { icon: FileOutput,title: "HTML → PDF",         desc: "HTML kodunu veya dosyasını PDF'e çevir.",         href: "https://tools.deepoda.com/convert/html-to-pdf",    badge: null,     color: "bg-teal-50 text-teal-600",      cat: "Dönüştür" },
-  { icon: FileOutput,title: "Markdown → PDF",     desc: "Markdown metnini PDF'e dönüştür.",                href: "https://tools.deepoda.com/convert/markdown-to-pdf",badge: null,     color: "bg-lime-50 text-lime-600",      cat: "Dönüştür" },
+  { icon: FileText,  title: "Merge PDF",          desc: "Combine multiple PDFs into a single document.",              href: "https://tools.deepoda.com/pdf/merge",           badge: "Popular", color: "bg-red-50 text-red-600",      cat: "PDF" },
+  { icon: Scissors,  title: "Split PDF",           desc: "Extract any page range into a separate file.",              href: "https://tools.deepoda.com/pdf/split",           badge: null,      color: "bg-orange-50 text-orange-600", cat: "PDF" },
+  { icon: Edit3,     title: "Edit PDF",            desc: "Delete pages, reorder, drag & drop.",                       href: "https://tools.deepoda.com/pdf/edit",            badge: null,      color: "bg-amber-50 text-amber-600",   cat: "PDF" },
+  { icon: Stamp,     title: "PDF Watermark",       desc: "Stamp CONFIDENTIAL, DRAFT and more onto your pages.",       href: "https://tools.deepoda.com/pdf/watermark",       badge: "New",     color: "bg-yellow-50 text-yellow-600", cat: "PDF" },
+  { icon: PenTool,   title: "Sign PDF",            desc: "Draw your signature and embed it into a PDF page.",         href: "https://tools.deepoda.com/pdf/sign",            badge: "New",     color: "bg-rose-50 text-rose-600",     cat: "PDF" },
+  { icon: FileOutput,title: "PDF → Word",          desc: "Convert a PDF file to Word format.",                        href: "https://tools.deepoda.com/pdf/to-word",         badge: null,      color: "bg-pink-50 text-pink-600",     cat: "PDF" },
+  // Image
+  { icon: Image,     title: "Compress Image",      desc: "Shrink JPG, PNG, and WEBP files without quality loss.",     href: "https://tools.deepoda.com/image/compress",      badge: "Popular", color: "bg-blue-50 text-blue-600",     cat: "Image" },
+  { icon: Wand2,     title: "Remove Background",   desc: "Remove the background in one click with AI.",               href: "https://tools.deepoda.com/image/remove-bg",     badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Image" },
+  { icon: RefreshCw, title: "Convert Format",      desc: "Instantly convert between JPG ↔ PNG ↔ WEBP.",              href: "https://tools.deepoda.com/image/convert",       badge: null,      color: "bg-cyan-50 text-cyan-600",     cat: "Image" },
+  // Convert
+  { icon: FileOutput,title: "Word → PDF",          desc: "Convert your DOCX file to a professional PDF instantly.",   href: "https://tools.deepoda.com/convert/word-to-pdf",    badge: null, color: "bg-green-50 text-green-600",    cat: "Convert" },
+  { icon: FileOutput,title: "Excel → PDF",         desc: "Convert XLSX/XLS files to PDF.",                           href: "https://tools.deepoda.com/convert/excel-to-pdf",   badge: null, color: "bg-emerald-50 text-emerald-600",cat: "Convert" },
+  { icon: FileOutput,title: "HTML → PDF",          desc: "Convert HTML code or a file to PDF.",                      href: "https://tools.deepoda.com/convert/html-to-pdf",    badge: null, color: "bg-teal-50 text-teal-600",      cat: "Convert" },
+  { icon: FileOutput,title: "Markdown → PDF",      desc: "Convert Markdown text to PDF.",                            href: "https://tools.deepoda.com/convert/markdown-to-pdf",badge: null, color: "bg-lime-50 text-lime-600",      cat: "Convert" },
   // Video
-  { icon: Video,     title: "Video Sıkıştır",     desc: "MP4, MOV videolarını kalite kaybetmeden küçült.", href: "https://tools.deepoda.com/video/compress",         badge: "Yeni",   color: "bg-violet-50 text-violet-600",  cat: "Video" },
-  { icon: Scissors,  title: "Video Kes",          desc: "Videonun istediğin bölümünü kes ve indir.",       href: "https://tools.deepoda.com/video/trim",             badge: "Yeni",   color: "bg-fuchsia-50 text-fuchsia-600",cat: "Video" },
-  { icon: Music,     title: "Video → MP3",        desc: "Videodan ses çıkar, MP3 formatında indir.",       href: "https://tools.deepoda.com/video/to-mp3",           badge: "Yeni",   color: "bg-pink-50 text-pink-600",      cat: "Video" },
-  { icon: RefreshCw, title: "Video Dönüştür",     desc: "MP4, WEBM, AVI, MOV arasında format değiştir.",  href: "https://tools.deepoda.com/video/convert",          badge: "Yeni",   color: "bg-indigo-50 text-indigo-600",  cat: "Video" },
-  { icon: Film,      title: "Video → GIF",        desc: "Videodan animasyonlu GIF oluştur.",               href: "https://tools.deepoda.com/video/to-gif",           badge: "Yeni",   color: "bg-sky-50 text-sky-600",        cat: "Video" },
-  { icon: Link,      title: "Video Birleştir",    desc: "Birden fazla videoyu tek dosyada birleştir.",     href: "https://tools.deepoda.com/video/merge",            badge: "Yeni",   color: "bg-blue-50 text-blue-600",      cat: "Video" },
-  { icon: VolumeX,   title: "Video Sessiz Et",    desc: "Video dosyasından sesi tamamen kaldır.",          href: "https://tools.deepoda.com/video/mute",             badge: "Yeni",   color: "bg-slate-50 text-slate-600",    cat: "Video" },
-  { icon: RotateCw,  title: "Video Döndür",       desc: "Videoyu 90°, 180° döndür veya çevir.",           href: "https://tools.deepoda.com/video/rotate",           badge: "Yeni",   color: "bg-cyan-50 text-cyan-600",      cat: "Video" },
+  { icon: Video,     title: "Compress Video",      desc: "Shrink MP4, MOV videos without losing quality.",           href: "https://tools.deepoda.com/video/compress",         badge: "New", color: "bg-violet-50 text-violet-600",  cat: "Video" },
+  { icon: Scissors,  title: "Trim Video",          desc: "Cut any portion of your video and download it.",           href: "https://tools.deepoda.com/video/trim",             badge: "New", color: "bg-fuchsia-50 text-fuchsia-600",cat: "Video" },
+  { icon: Music,     title: "Video → MP3",         desc: "Extract audio from video and download as MP3.",            href: "https://tools.deepoda.com/video/to-mp3",           badge: "New", color: "bg-pink-50 text-pink-600",      cat: "Video" },
+  { icon: RefreshCw, title: "Convert Video",       desc: "Switch format between MP4, WEBM, AVI, MOV.",              href: "https://tools.deepoda.com/video/convert",          badge: "New", color: "bg-indigo-50 text-indigo-600",  cat: "Video" },
+  { icon: Film,      title: "Video → GIF",         desc: "Create an animated GIF from a video clip.",                href: "https://tools.deepoda.com/video/to-gif",           badge: "New", color: "bg-sky-50 text-sky-600",        cat: "Video" },
+  { icon: Link,      title: "Merge Videos",        desc: "Join multiple videos into a single file.",                 href: "https://tools.deepoda.com/video/merge",            badge: "New", color: "bg-blue-50 text-blue-600",      cat: "Video" },
+  { icon: VolumeX,   title: "Mute Video",          desc: "Remove all audio from a video file.",                      href: "https://tools.deepoda.com/video/mute",             badge: "New", color: "bg-slate-50 text-slate-600",    cat: "Video" },
+  { icon: RotateCw,  title: "Rotate Video",        desc: "Rotate or flip your video 90°, 180°.",                    href: "https://tools.deepoda.com/video/rotate",           badge: "New", color: "bg-cyan-50 text-cyan-600",      cat: "Video" },
 ];
 
-const CATS = ["Tümü", "PDF", "Görsel", "Dönüştür", "Video"] as const;
+const CATS = ["All", "PDF", "Image", "Convert", "Video"] as const;
 
 const steps = [
-  { num: "01", title: "Dosyanı Seç",  desc: "Sürükle-bırak veya klasörden seç. Birden fazla dosya aynı anda." },
-  { num: "02", title: "Araç Çalışır", desc: "İşlem tamamen tarayıcında gerçekleşir. Sunucuya hiçbir şey gönderilmez." },
-  { num: "03", title: "İndir",        desc: "Hazır dosyan anında indirilir. Kayıt olmak gerekmez." },
+  { num: "01", title: "Select Your File",  desc: "Drag & drop or browse your folder. Multiple files at once supported." },
+  { num: "02", title: "Tool Runs",         desc: "Processing happens entirely in your browser. Nothing is sent to any server." },
+  { num: "03", title: "Download",          desc: "Your file is ready instantly. No sign-up required." },
 ];
 
 const stats = [
-  { value: "31",    label: "Ücretsiz Araç" },
-  { value: "0 ₺",  label: "Ücret" },
-  { value: "100%",  label: "Tarayıcıda" },
-  { value: "GDPR",  label: "Uyumlu" },
+  { value: "31",    label: "Free Tools" },
+  { value: "$0",    label: "Cost" },
+  { value: "100%",  label: "In Browser" },
+  { value: "GDPR",  label: "Compliant" },
 ];
 
 export default function Home() {
-  const [activeCat, setActiveCat] = useState<(typeof CATS)[number]>("Tümü");
+  const [activeCat, setActiveCat] = useState<(typeof CATS)[number]>("All");
   const [search, setSearch] = useState("");
 
   const filtered = allTools.filter((t) => {
-    const matchCat = activeCat === "Tümü" || t.cat === activeCat;
+    const matchCat = activeCat === "All" || t.cat === activeCat;
     const matchSearch = t.title.toLowerCase().includes(search.toLowerCase()) ||
                         t.desc.toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;
@@ -72,27 +72,27 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            {allTools.length} ücretsiz araç · Sunucu yok · Gizlilik garantili
+            {allTools.length} free tools · No server · Privacy guaranteed
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-fade-up">
-            İş süreçlerini<br />
-            <span className="shimmer-text">otomatikleştir.</span>
+            Automate your<br />
+            <span className="shimmer-text">workflow.</span>
           </h1>
 
           <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up delay-100">
-            PDF düzenle, görsel işle, dosya dönüştür — hepsi saniyeler içinde,
-            hiç para ödemeden, verilerini sunucuya göndermeden.
+            Edit PDFs, process images, convert files — all in seconds,
+            completely free, without sending your data to any server.
           </p>
 
-          {/* ── ARAMA KUTUSU ── */}
+          {/* ── SEARCH BOX ── */}
           <div className="relative max-w-xl mx-auto animate-fade-up delay-200">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Araç ara — PDF birleştir, arka plan sil…"
+              placeholder="Search tools — merge PDF, remove background…"
               className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-100 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base transition-all"
             />
           </div>
@@ -114,18 +114,18 @@ export default function Home() {
       </section>
 
       {/* ── TOOLS GRID ───────────────────────────────────── */}
-      <section id="araclar" className="py-16 px-5">
+      <section id="tools" className="py-16 px-5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Tüm araçlar, tek platformda
+              All tools, one platform
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              {allTools.length} araç, tamamı ücretsiz. Dosyaların asla sunucuya gitmez.
+              {allTools.length} tools, all free. Your files never leave your browser.
             </p>
           </div>
 
-          {/* Kategori tabları */}
+          {/* Category tabs */}
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {CATS.map((cat) => (
               <button
@@ -138,7 +138,7 @@ export default function Home() {
                 }`}
               >
                 {cat}
-                {cat !== "Tümü" && (
+                {cat !== "All" && (
                   <span className="ml-1.5 text-xs opacity-70">
                     ({allTools.filter((t) => t.cat === cat).length})
                   </span>
@@ -147,7 +147,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Araç listesi */}
+          {/* Tool list */}
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered.map((tool) => {
@@ -161,7 +161,7 @@ export default function Home() {
                     {tool.badge && (
                       <span className={`absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full ${
                         tool.badge === "AI" ? "bg-purple-600 text-white" :
-                        tool.badge === "Yeni" ? "bg-emerald-500 text-white" :
+                        tool.badge === "New" ? "bg-emerald-500 text-white" :
                         "bg-blue-600 text-white"
                       }`}>
                         {tool.badge}
@@ -177,7 +177,7 @@ export default function Home() {
                       <p className="text-sm text-gray-500 leading-relaxed">{tool.desc}</p>
                     </div>
                     <div className="flex items-center gap-1 text-sm font-semibold text-blue-600 mt-auto pt-2 border-t border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Hemen Kullan <ArrowRight className="w-4 h-4" />
+                      Use Now <ArrowRight className="w-4 h-4" />
                     </div>
                   </a>
                 );
@@ -186,22 +186,22 @@ export default function Home() {
           ) : (
             <div className="text-center py-16 text-gray-400">
               <Search className="w-10 h-10 mx-auto mb-3 opacity-40" />
-              <p className="text-lg font-medium">"{search}" için araç bulunamadı</p>
-              <p className="text-sm mt-1">Farklı bir kelime dene</p>
+              <p className="text-lg font-medium">No tools found for "{search}"</p>
+              <p className="text-sm mt-1">Try a different keyword</p>
             </div>
           )}
         </div>
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <section className="py-20 px-5 bg-gray-50 border-y">
+      <section id="how-it-works" className="py-20 px-5 bg-gray-50 border-y">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              3 adımda tamamla
+              Done in 3 steps
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Kayıt olmak yok, yazılım kurmak yok. Tarayıcını aç, işini bitir.
+              No sign-up, no software to install. Open your browser, get it done.
             </p>
           </div>
 
@@ -224,18 +224,18 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Neden Deepoda?
+              Why Deepoda?
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Pek çok online araç dosyalarını sunucularına yükler. Deepoda bunu yapmaz.
+              Many online tools upload your files to their servers. Deepoda doesn't.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { Icon: Shield, title: "Tam Gizlilik",  desc: "Dosyaların yalnızca senin tarayıcında işlenir. Hiçbir sunucu görmez, hiçbir log tutulmaz.", color: "text-green-600 bg-green-50" },
-              { Icon: Zap,    title: "Anında Sonuç",  desc: "İnternet hızına bağımlı değil. Tüm işlemler cihazının gücüyle gerçekleşir.",                color: "text-blue-600 bg-blue-50" },
-              { Icon: Globe,  title: "Her Yerden",    desc: "Mac, Windows, Linux, telefon — herhangi bir cihazdan, işletim sisteminden çalışır.",        color: "text-purple-600 bg-purple-50" },
+              { Icon: Shield, title: "Full Privacy",    desc: "Your files are processed only in your browser. No server sees them, no logs are kept.", color: "text-green-600 bg-green-50" },
+              { Icon: Zap,    title: "Instant Results", desc: "Not dependent on internet speed. All processing runs on the power of your device.",      color: "text-blue-600 bg-blue-50" },
+              { Icon: Globe,  title: "Works Anywhere",  desc: "Mac, Windows, Linux, mobile — works from any device and any operating system.",          color: "text-purple-600 bg-purple-50" },
             ].map(({ Icon, title, desc, color }) => (
               <div key={title} className="p-6 rounded-2xl border border-gray-200 bg-white">
                 <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${color}`}>
@@ -253,19 +253,19 @@ export default function Home() {
       <section className="py-20 px-5 bg-gradient-to-br from-blue-600 to-blue-800">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Hemen başla. Kayıt gerekmez.
+            Start now. No sign-up required.
           </h2>
           <p className="text-blue-200 mb-8 text-lg">
-            Her gün binlerce kişi iş süreçlerini Deepoda ile hızlandırıyor.
+            Thousands of people speed up their workflows with Deepoda every day.
           </p>
           <a
             href="https://tools.deepoda.com"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold bg-white text-blue-700 rounded-2xl hover:bg-blue-50 transition-all hover:scale-[1.02] shadow-lg"
           >
-            Tüm Araçları Gör <ArrowRight className="w-5 h-5" />
+            Browse All Tools <ArrowRight className="w-5 h-5" />
           </a>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-blue-200 text-sm">
-            {["Ücretsiz", "Kayıt yok", "Sunucu yok", "GDPR uyumlu"].map((item) => (
+            {["Free", "No sign-up", "No server", "GDPR compliant"].map((item) => (
               <span key={item} className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" /> {item}
               </span>
