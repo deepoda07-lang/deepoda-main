@@ -20,9 +20,11 @@ const allTools = [
   { icon: Lock,      title: "Lock PDF",            desc: "Password-protect your PDF with encryption.",                href: "https://tools.deepoda.com/pdf/lock",            badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   { icon: LockOpen,  title: "Unlock PDF",          desc: "Remove password protection from a PDF file.",               href: "https://tools.deepoda.com/pdf/unlock",          badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   // Image
+
   { icon: Image,     title: "Compress Image",      desc: "Shrink JPG, PNG, and WEBP files without quality loss.",     href: "https://tools.deepoda.com/image/compress",      badge: "Popular", color: "bg-blue-50 text-blue-600",     cat: "Image" },
   { icon: Wand2,     title: "Remove Background",   desc: "Remove the background in one click with AI.",               href: "https://tools.deepoda.com/image/remove-bg",     badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Image" },
   { icon: RefreshCw, title: "Convert Format",      desc: "Instantly convert between JPG ↔ PNG ↔ WEBP.",              href: "https://tools.deepoda.com/image/convert",       badge: null,      color: "bg-cyan-50 text-cyan-600",     cat: "Image" },
+  { icon: Stamp,     title: "Add Watermark",       desc: "Stamp custom text watermark on your image.",                href: "https://tools.deepoda.com/image/watermark",     badge: "New",     color: "bg-indigo-50 text-indigo-600", cat: "Image" },
   // Convert
   { icon: FileOutput,title: "Word → PDF",          desc: "Convert your DOCX file to a professional PDF instantly.",   href: "https://tools.deepoda.com/convert/word-to-pdf",    badge: null, color: "bg-green-50 text-green-600",    cat: "Convert" },
   { icon: FileOutput,title: "Excel → PDF",         desc: "Convert XLSX/XLS files to PDF.",                           href: "https://tools.deepoda.com/convert/excel-to-pdf",   badge: null, color: "bg-emerald-50 text-emerald-600",cat: "Convert" },
@@ -48,7 +50,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "33",    label: "Free Tools" },
+  { value: "34",    label: "Free Tools" },
   { value: "$0",    label: "Cost" },
   { value: "100%",  label: "In Browser" },
   { value: "GDPR",  label: "Compliant" },
