@@ -19,6 +19,7 @@ const allTools = [
   { icon: FileOutput,title: "PDF → Word",          desc: "Convert a PDF file to Word format.",                        href: "https://tools.deepoda.com/pdf/to-word",         badge: null,      color: "bg-pink-50 text-pink-600",     cat: "PDF" },
   { icon: Lock,      title: "Lock PDF",            desc: "Password-protect your PDF with encryption.",                href: "https://tools.deepoda.com/pdf/lock",            badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   { icon: LockOpen,  title: "Unlock PDF",          desc: "Remove password protection from a PDF file.",               href: "https://tools.deepoda.com/pdf/unlock",          badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
+  { icon: Scissors,  title: "Crop PDF",            desc: "Trim the margins of every page in your PDF.",               href: "https://tools.deepoda.com/pdf/crop",            badge: "New",     color: "bg-orange-50 text-orange-600", cat: "PDF" },
   // Image
 
   { icon: Image,     title: "Compress Image",      desc: "Shrink JPG, PNG, and WEBP files without quality loss.",     href: "https://tools.deepoda.com/image/compress",      badge: "Popular", color: "bg-blue-50 text-blue-600",     cat: "Image" },
@@ -51,7 +52,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "35",    label: "Free Tools" },
+  { value: "36",    label: "Free Tools" },
   { value: "$0",    label: "Cost" },
   { value: "100%",  label: "In Browser" },
   { value: "GDPR",  label: "Compliant" },
