@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "siteTitle": "Deepoda – Herramientas Online para Simplificar tu Flujo de Trabajo",
+    "siteDescription": "Combina PDFs, comprime imágenes, elimina fondos y más. En segundos, gratis, en tu navegador. Tus datos nunca salen de tu dispositivo.",
+    "siteKeywords": ["unir pdf", "comprimir imagen", "eliminar fondo", "herramientas online", "gratis"]
+  },
+  "navbar": {
+    "howItWorks": "Cómo Funciona",
+    "tools": "Herramientas",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "useTools": "Usar Herramientas →"
+  },
+  "footer": {
+    "tagline": "Plataforma de herramientas online gratuitas. Todo el procesamiento ocurre en tu navegador — los datos nunca salen de tu dispositivo.",
+    "pdfTools": "Herramientas PDF",
+    "imageTools": "Herramientas de Imagen",
+    "videoTools": "Herramientas de Video",
+    "company": "Deepoda",
+    "copyright": "© 2025 Deepoda · Todo el procesamiento en tu navegador · Cumple con GDPR",
+    "privacy": "Tus datos nunca salen de tu dispositivo.",
+    "links": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "contact": "Contacto",
+      "allTools": "Todas las Herramientas"
+    }
+  },
+  "home": {
+    "badge": "herramientas gratis · Sin servidor · Privacidad garantizada",
+    "hero": {
+      "heading1": "Automatiza tu",
+      "heading2": "flujo de trabajo.",
+      "description": "Edita PDFs, procesa imágenes, convierte archivos — todo en segundos, completamente gratis, sin enviar tus datos a ningún servidor."
+    },
+    "search": {
+      "placeholder": "Buscar herramientas — combinar PDF, eliminar fondo…"
+    },
+    "stats": {
+      "tools": "Herramientas Gratis",
+      "cost": "Costo",
+      "inBrowser": "En Navegador",
+      "gdpr": "Cumple GDPR"
+    },
+    "toolsSection": {
+      "heading": "Todas las herramientas, una plataforma",
+      "description": "herramientas, todas gratis. Tus archivos nunca salen de tu navegador.",
+      "noResults": "No se encontraron herramientas para",
+      "noResultsHint": "Intenta con otra palabra clave"
+    },
+    "categories": {
+      "all": "Todas",
+      "pdf": "PDF",
+      "image": "Imagen",
+      "convert": "Convertir",
+      "video": "Video"
+    },
+    "toolCard": {
+      "useNow": "Usar Ahora"
+    },
+    "howItWorks": {
+      "heading": "Listo en 3 pasos",
+      "description": "Sin registro, sin software que instalar. Abre tu navegador y termina tu tarea.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Selecciona tu Archivo",
+          "desc": "Arrastra y suelta o busca en tu carpeta. Se admiten varios archivos a la vez."
+        },
+        {
+          "num": "02",
+          "title": "La Herramienta Actúa",
+          "desc": "El procesamiento ocurre completamente en tu navegador. Nada se envía a ningún servidor."
+        },
+        {
+          "num": "03",
+          "title": "Descarga",
+          "desc": "Tu archivo está listo al instante. Sin registro requerido."
+        }
+      ]
+    },
+    "whyDeepoda": {
+      "heading": "¿Por qué Deepoda?",
+      "description": "Muchas herramientas online suben tus archivos a sus servidores. Deepoda no.",
+      "features": [
+        {
+          "title": "Privacidad Total",
+          "desc": "Tus archivos se procesan solo en tu navegador. Ningún servidor los ve, no se guardan registros."
+        },
+        {
+          "title": "Resultados Instantáneos",
+          "desc": "No depende de la velocidad de internet. Todo el procesamiento usa la potencia de tu dispositivo."
+        },
+        {
+          "title": "Funciona en Cualquier Lugar",
+          "desc": "Mac, Windows, Linux, móvil — funciona desde cualquier dispositivo y sistema operativo."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Empieza ahora. Sin registro.",
+      "description": "Miles de personas aceleran su flujo de trabajo con Deepoda cada día.",
+      "button": "Ver Todas las Herramientas",
+      "badges": ["Gratis", "Sin registro", "Sin servidor", "Cumple GDPR"]
+    }
+  },
+  "tools": {
+    "pdf": {
+      "merge":     { "title": "Combinar PDF",      "desc": "Combina varios PDFs en un solo documento.",                          "badge": "Popular" },
+      "split":     { "title": "Dividir PDF",       "desc": "Extrae cualquier rango de páginas en un archivo separado.",          "badge": null },
+      "edit":      { "title": "Editar PDF",        "desc": "Elimina páginas, reordena, arrastra y suelta.",                      "badge": null },
+      "watermark": { "title": "Marca de Agua PDF", "desc": "Añade sellos CONFIDENCIAL, BORRADOR y más a tus páginas.",           "badge": "Nuevo" },
+      "sign":      { "title": "Firmar PDF",        "desc": "Dibuja tu firma e incrústala en una página PDF.",                    "badge": "Nuevo" },
+      "toWord":    { "title": "PDF → Word",        "desc": "Convierte un archivo PDF al formato Word.",                          "badge": null },
+      "lock":      { "title": "Bloquear PDF",      "desc": "Protege tu PDF con contraseña y cifrado.",                           "badge": "Nuevo" },
+      "unlock":    { "title": "Desbloquear PDF",   "desc": "Elimina la protección con contraseña de un PDF.",                    "badge": "Nuevo" },
+      "crop":      { "title": "Recortar PDF",      "desc": "Recorta los márgenes de cada página de tu PDF.",                     "badge": "Nuevo" },
+      "formFill":  { "title": "Rellenar Formulario PDF", "desc": "Rellena campos de texto, casillas y desplegables en un PDF.",   "badge": "Nuevo" },
+      "annotate":  { "title": "Anotar PDF",        "desc": "Dibuja, resalta y añade notas de texto a tu PDF.",                   "badge": "Nuevo" }
+    },
+    "image": {
+      "compress":  { "title": "Comprimir Imagen",  "desc": "Reduce archivos JPG, PNG y WEBP sin pérdida de calidad.",            "badge": "Popular" },
+      "removeBg":  { "title": "Eliminar Fondo",    "desc": "Elimina el fondo con un clic usando IA.",                            "badge": "IA" },
+      "convert":   { "title": "Convertir Formato", "desc": "Convierte instantáneamente entre JPG ↔ PNG ↔ WEBP.",               "badge": null },
+      "watermark": { "title": "Añadir Marca de Agua","desc": "Añade una marca de agua de texto personalizada a tu imagen.",      "badge": "Nuevo" },
+      "addText":   { "title": "Añadir Texto a Imagen","desc": "Haz clic en cualquier parte de la imagen para colocar texto.",    "badge": "Nuevo" }
+    },
+    "convert": {
+      "wordToPdf":     { "title": "Word → PDF",     "desc": "Convierte tu archivo DOCX a PDF profesional al instante.",  "badge": null },
+      "excelToPdf":    { "title": "Excel → PDF",    "desc": "Convierte archivos XLSX/XLS a PDF.",                        "badge": null },
+      "htmlToPdf":     { "title": "HTML → PDF",     "desc": "Convierte código HTML o un archivo a PDF.",                 "badge": null },
+      "markdownToPdf": { "title": "Markdown → PDF", "desc": "Convierte texto Markdown a PDF.",                           "badge": null }
+    },
+    "video": {
+      "compress": { "title": "Comprimir Video",   "desc": "Reduce videos MP4, MOV sin perder calidad.",                  "badge": "Nuevo" },
+      "trim":     { "title": "Recortar Video",    "desc": "Corta cualquier parte de tu video y descárgala.",            "badge": "Nuevo" },
+      "toMp3":    { "title": "Video → MP3",       "desc": "Extrae audio del video y descárgalo como MP3.",             "badge": "Nuevo" },
+      "convert":  { "title": "Convertir Video",   "desc": "Cambia formato entre MP4, WEBM, AVI, MOV.",                 "badge": "Nuevo" },
+      "toGif":    { "title": "Video → GIF",       "desc": "Crea un GIF animado a partir de un clip de video.",         "badge": "Nuevo" },
+      "merge":    { "title": "Unir Videos",       "desc": "Une varios videos en un solo archivo.",                     "badge": "Nuevo" },
+      "mute":     { "title": "Silenciar Video",   "desc": "Elimina todo el audio de un archivo de video.",             "badge": "Nuevo" },
+      "rotate":   { "title": "Rotar Video",       "desc": "Rota o voltea tu video 90°, 180°.",                        "badge": "Nuevo" }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Acerca de",
+      "description": "¿Qué es Deepoda, qué hace y por qué existe?"
+    },
+    "hero": {
+      "heading1": "Estamos aquí para hacer",
+      "heading2": "tu trabajo más fácil.",
+      "description": "Deepoda es una plataforma de herramientas gratuitas que te ayuda a completar tareas digitales cotidianas en segundos en lugar de minutos."
+    },
+    "cards": [
+      { "title": "Misión",     "desc": "Proporcionar herramientas rápidas y seguras que cualquiera pueda usar sin conocimientos técnicos." },
+      { "title": "Valores",    "desc": "La privacidad es nuestra máxima prioridad. Tus archivos nunca salen de tu navegador." },
+      { "title": "Tecnología", "desc": "Arquitectura sin servidor impulsada por WebAssembly, Canvas API y bibliotecas modernas." }
+    ],
+    "whyExist": {
+      "heading": "Por qué existimos",
+      "p1": "Tener que instalar una app solo para combinar un PDF, subir archivos a sitios llenos de anuncios para comprimir una imagen, o crear una cuenta para convertir un formato — son pérdidas de tiempo innecesarias.",
+      "p2": "Deepoda fue diseñado para resolver exactamente esto. Todas nuestras herramientas funcionan en el navegador; tus archivos nunca se envían a un servidor. Esto te mantiene seguro y hace el proceso significativamente más rápido."
+    },
+    "howSustain": {
+      "heading": "Cómo nos sostenemos",
+      "p1": "Las herramientas principales serán gratis para siempre. La plataforma se financia a través de un plan Pro opcional para funciones avanzadas y Google AdSense."
+    },
+    "cta": {
+      "heading": "Pruébalo ahora",
+      "description": "Sin registro, gratis, ahora mismo.",
+      "button": "Ver Herramientas"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto",
+      "description": "Ponte en contacto con Deepoda."
+    },
+    "heading": "Contáctanos",
+    "description": "Completa el formulario para sugerencias, reportes de errores o consultas de colaboración.",
+    "cards": [
+      { "title": "Soporte General",  "desc": "Para preguntas sobre nuestras herramientas." },
+      { "title": "Reporte de Error", "desc": "¿Encontraste un problema? Haznos saber." },
+      { "title": "Colaboración",     "desc": "Para propuestas de integración o publicidad." }
+    ],
+    "form": {
+      "fullName":    "Nombre Completo",
+      "namePlaceholder": "Tu nombre",
+      "email":       "Correo Electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "subject":     "Asunto",
+      "options": ["Soporte General", "Reporte de Error", "Colaboración", "Otro"],
+      "message":     "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "send":        "Enviar Mensaje"
+    }
+  },
+  "notFound": {
+    "heading": "Página No Encontrada",
+    "description": "La página que buscas no existe.",
+    "button": "Ir al Inicio"
+  }
+}
