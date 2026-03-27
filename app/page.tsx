@@ -6,6 +6,7 @@ import {
   ArrowRight, CheckCircle2, Shield, Zap, Globe, Search,
   Edit3, Stamp, PenTool,
   Video, Music, Film, Link, VolumeX, RotateCw,
+  Lock, LockOpen,
 } from "lucide-react";
 
 const allTools = [
@@ -16,6 +17,8 @@ const allTools = [
   { icon: Stamp,     title: "PDF Watermark",       desc: "Stamp CONFIDENTIAL, DRAFT and more onto your pages.",       href: "https://tools.deepoda.com/pdf/watermark",       badge: "New",     color: "bg-yellow-50 text-yellow-600", cat: "PDF" },
   { icon: PenTool,   title: "Sign PDF",            desc: "Draw your signature and embed it into a PDF page.",         href: "https://tools.deepoda.com/pdf/sign",            badge: "New",     color: "bg-rose-50 text-rose-600",     cat: "PDF" },
   { icon: FileOutput,title: "PDF → Word",          desc: "Convert a PDF file to Word format.",                        href: "https://tools.deepoda.com/pdf/to-word",         badge: null,      color: "bg-pink-50 text-pink-600",     cat: "PDF" },
+  { icon: Lock,      title: "Lock PDF",            desc: "Password-protect your PDF with encryption.",                href: "https://tools.deepoda.com/pdf/lock",            badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
+  { icon: LockOpen,  title: "Unlock PDF",          desc: "Remove password protection from a PDF file.",               href: "https://tools.deepoda.com/pdf/unlock",          badge: "New",     color: "bg-slate-50 text-slate-600",   cat: "PDF" },
   // Image
   { icon: Image,     title: "Compress Image",      desc: "Shrink JPG, PNG, and WEBP files without quality loss.",     href: "https://tools.deepoda.com/image/compress",      badge: "Popular", color: "bg-blue-50 text-blue-600",     cat: "Image" },
   { icon: Wand2,     title: "Remove Background",   desc: "Remove the background in one click with AI.",               href: "https://tools.deepoda.com/image/remove-bg",     badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Image" },
@@ -45,7 +48,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "31",    label: "Free Tools" },
+  { value: "33",    label: "Free Tools" },
   { value: "$0",    label: "Cost" },
   { value: "100%",  label: "In Browser" },
   { value: "GDPR",  label: "Compliant" },
