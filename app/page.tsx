@@ -5,6 +5,7 @@ import {
   FileText, Image, RefreshCw, Scissors, Wand2, FileOutput,
   ArrowRight, CheckCircle2, Shield, Zap, Globe, Search,
   Edit3, Stamp, PenTool,
+  Video, Music, Film, Link, VolumeX, RotateCw,
 } from "lucide-react";
 
 const allTools = [
@@ -20,10 +21,22 @@ const allTools = [
   { icon: Wand2,     title: "Arka Plan Sil",      desc: "Yapay zeka ile arka planı tek tıkla kaldır.",      href: "https://tools.deepoda.com/image/remove-bg",    badge: "AI",      color: "bg-purple-50 text-purple-600", cat: "Görsel" },
   { icon: RefreshCw, title: "Format Dönüştür",    desc: "JPG ↔ PNG ↔ WEBP arasında anında dönüştür.",     href: "https://tools.deepoda.com/image/convert",      badge: null,      color: "bg-cyan-50 text-cyan-600",     cat: "Görsel" },
   // Dönüştür
-  { icon: FileOutput,title: "Word → PDF",         desc: "DOCX dosyanı anında profesyonel PDF'e çevir.",    href: "https://tools.deepoda.com/convert/word-to-pdf", badge: null,     color: "bg-green-50 text-green-600",   cat: "Dönüştür" },
+  { icon: FileOutput,title: "Word → PDF",         desc: "DOCX dosyanı anında profesyonel PDF'e çevir.",    href: "https://tools.deepoda.com/convert/word-to-pdf",    badge: null,     color: "bg-green-50 text-green-600",    cat: "Dönüştür" },
+  { icon: FileOutput,title: "Excel → PDF",        desc: "XLSX/XLS dosyanı PDF'e dönüştür.",                href: "https://tools.deepoda.com/convert/excel-to-pdf",   badge: null,     color: "bg-emerald-50 text-emerald-600",cat: "Dönüştür" },
+  { icon: FileOutput,title: "HTML → PDF",         desc: "HTML kodunu veya dosyasını PDF'e çevir.",         href: "https://tools.deepoda.com/convert/html-to-pdf",    badge: null,     color: "bg-teal-50 text-teal-600",      cat: "Dönüştür" },
+  { icon: FileOutput,title: "Markdown → PDF",     desc: "Markdown metnini PDF'e dönüştür.",                href: "https://tools.deepoda.com/convert/markdown-to-pdf",badge: null,     color: "bg-lime-50 text-lime-600",      cat: "Dönüştür" },
+  // Video
+  { icon: Video,     title: "Video Sıkıştır",     desc: "MP4, MOV videolarını kalite kaybetmeden küçült.", href: "https://tools.deepoda.com/video/compress",         badge: "Yeni",   color: "bg-violet-50 text-violet-600",  cat: "Video" },
+  { icon: Scissors,  title: "Video Kes",          desc: "Videonun istediğin bölümünü kes ve indir.",       href: "https://tools.deepoda.com/video/trim",             badge: "Yeni",   color: "bg-fuchsia-50 text-fuchsia-600",cat: "Video" },
+  { icon: Music,     title: "Video → MP3",        desc: "Videodan ses çıkar, MP3 formatında indir.",       href: "https://tools.deepoda.com/video/to-mp3",           badge: "Yeni",   color: "bg-pink-50 text-pink-600",      cat: "Video" },
+  { icon: RefreshCw, title: "Video Dönüştür",     desc: "MP4, WEBM, AVI, MOV arasında format değiştir.",  href: "https://tools.deepoda.com/video/convert",          badge: "Yeni",   color: "bg-indigo-50 text-indigo-600",  cat: "Video" },
+  { icon: Film,      title: "Video → GIF",        desc: "Videodan animasyonlu GIF oluştur.",               href: "https://tools.deepoda.com/video/to-gif",           badge: "Yeni",   color: "bg-sky-50 text-sky-600",        cat: "Video" },
+  { icon: Link,      title: "Video Birleştir",    desc: "Birden fazla videoyu tek dosyada birleştir.",     href: "https://tools.deepoda.com/video/merge",            badge: "Yeni",   color: "bg-blue-50 text-blue-600",      cat: "Video" },
+  { icon: VolumeX,   title: "Video Sessiz Et",    desc: "Video dosyasından sesi tamamen kaldır.",          href: "https://tools.deepoda.com/video/mute",             badge: "Yeni",   color: "bg-slate-50 text-slate-600",    cat: "Video" },
+  { icon: RotateCw,  title: "Video Döndür",       desc: "Videoyu 90°, 180° döndür veya çevir.",           href: "https://tools.deepoda.com/video/rotate",           badge: "Yeni",   color: "bg-cyan-50 text-cyan-600",      cat: "Video" },
 ];
 
-const CATS = ["Tümü", "PDF", "Görsel", "Dönüştür"] as const;
+const CATS = ["Tümü", "PDF", "Görsel", "Dönüştür", "Video"] as const;
 
 const steps = [
   { num: "01", title: "Dosyanı Seç",  desc: "Sürükle-bırak veya klasörden seç. Birden fazla dosya aynı anda." },
@@ -32,7 +45,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "13",    label: "Ücretsiz Araç" },
+  { value: "31",    label: "Ücretsiz Araç" },
   { value: "0 ₺",  label: "Ücret" },
   { value: "100%",  label: "Tarayıcıda" },
   { value: "GDPR",  label: "Uyumlu" },

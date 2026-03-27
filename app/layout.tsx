@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="bg-gray-950 text-gray-400 pt-16 pb-8">
           <div className="max-w-6xl mx-auto px-5">
             {/* Üst kısım */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
               {/* Marka */}
               <div className="col-span-2 md:col-span-1">
                 <div className="flex items-center gap-2 font-bold text-lg text-white mb-3">
@@ -65,6 +65,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     ["Arka Plan Sil", "/image/remove-bg"],
                     ["Format Dönüştür", "/image/convert"],
                     ["Word → PDF", "/convert/word-to-pdf"],
+                  ].map(([label, path]) => (
+                    <li key={path}>
+                      <a href={`https://tools.deepoda.com${path}`} className="hover:text-white transition-colors">
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Video Araçları */}
+              <div>
+                <h4 className="text-white font-semibold text-sm mb-4">Video Araçları</h4>
+                <ul className="space-y-2 text-sm">
+                  {[
+                    ["Video Sıkıştır", "/video/compress"],
+                    ["Video Kes", "/video/trim"],
+                    ["Video → MP3", "/video/to-mp3"],
+                    ["Video → GIF", "/video/to-gif"],
+                    ["Video Birleştir", "/video/merge"],
                   ].map(([label, path]) => (
                     <li key={path}>
                       <a href={`https://tools.deepoda.com${path}`} className="hover:text-white transition-colors">
