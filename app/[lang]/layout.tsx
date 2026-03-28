@@ -164,7 +164,7 @@ export default async function LocaleLayout({
           <div className="border-t border-gray-800/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-600">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              <p>{dict.footer.copyright}</p>
+              <p>© {new Date().getFullYear()} {dict.footer.copyright}</p>
             </div>
             <p>{dict.footer.privacy}</p>
           </div>
