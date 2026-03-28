@@ -1,0 +1,32 @@
+{
+  "name": "Deepoda – Online Tools",
+  "short_name": "Deepoda",
+  "description": "Merge PDFs, compress images, remove backgrounds and more. Free, right in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "All Tools",
+      "url": "https://tools.deepoda.com",
+      "description": "Browse all free online tools"
+    }
+  ]
+}
