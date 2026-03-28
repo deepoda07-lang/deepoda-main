@@ -2,7 +2,13 @@
   "meta": {
     "siteTitle": "Deepoda – İş Akışını Kolaylaştıran Online Araçlar",
     "siteDescription": "PDF birleştir, görsel sıkıştır, arka plan sil ve daha fazlası. Saniyeler içinde, ücretsiz, tarayıcında. Verilen hiçbir zaman cihazından çıkmaz.",
-    "siteKeywords": ["pdf birleştir", "görsel sıkıştır", "arka plan sil", "online araçlar", "ücretsiz"]
+    "siteKeywords": [
+      "pdf birleştir",
+      "görsel sıkıştır",
+      "arka plan sil",
+      "online araçlar",
+      "ücretsiz"
+    ]
   },
   "navbar": {
     "howItWorks": "Nasıl Çalışır",
@@ -40,7 +46,8 @@
       "tools": "Ücretsiz Araç",
       "cost": "Maliyet",
       "inBrowser": "Tarayıcıda",
-      "gdpr": "Uyumlu"
+      "gdpr": "Uyumlu",
+      "filesProcessed": "İşlenen Dosya"
     },
     "toolsSection": {
       "heading": "Tüm araçlar, tek platform",
@@ -101,45 +108,162 @@
       "heading": "Hemen başla. Kayıt gerekmez.",
       "description": "Her gün binlerce kişi Deepoda ile iş akışını hızlandırıyor.",
       "button": "Tüm Araçlara Göz At",
-      "badges": ["Ücretsiz", "Kayıt yok", "Sunucu yok", "GDPR uyumlu"]
+      "badges": [
+        "Ücretsiz",
+        "Kayıt yok",
+        "Sunucu yok",
+        "GDPR uyumlu"
+      ]
     }
   },
   "tools": {
     "pdf": {
-      "merge":     { "title": "PDF Birleştir",     "desc": "Birden fazla PDF'i tek belgede birleştir.",                    "badge": "Popüler" },
-      "split":     { "title": "PDF Böl",           "desc": "İstediğin sayfa aralığını ayrı dosyaya çıkar.",               "badge": null },
-      "edit":      { "title": "PDF Düzenle",       "desc": "Sayfa sil, yeniden sırala, sürükle & bırak.",                 "badge": null },
-      "watermark": { "title": "PDF Filigran",      "desc": "GİZLİ, TASLAK gibi damgaları sayfalarına ekle.",              "badge": "Yeni" },
-      "sign":      { "title": "PDF İmzala",        "desc": "İmzanı çiz ve PDF sayfasına göm.",                            "badge": "Yeni" },
-      "toWord":    { "title": "PDF → Word",        "desc": "PDF dosyasını Word formatına dönüştür.",                      "badge": null },
-      "lock":      { "title": "PDF Şifrele",       "desc": "PDF'ini şifreleme ile parola korumasına al.",                 "badge": "Yeni" },
-      "unlock":    { "title": "PDF Şifre Kaldır",  "desc": "PDF dosyasından parola korumasını kaldır.",                   "badge": "Yeni" },
-      "crop":      { "title": "PDF Kırp",          "desc": "PDF'indeki her sayfanın kenar boşluklarını kırp.",            "badge": "Yeni" },
-      "formFill":  { "title": "PDF Form Doldur",   "desc": "PDF'deki metin alanlarını, onay kutularını ve açılır listeleri doldur.", "badge": "Yeni" },
-      "annotate":  { "title": "PDF Açıklama Ekle", "desc": "PDF'ine çizim, vurgulama ve metin notları ekle.",             "badge": "Yeni" }
+      "merge": {
+        "title": "PDF Birleştir",
+        "desc": "Birden fazla PDF'i tek belgede birleştir.",
+        "badge": "Popüler"
+      },
+      "split": {
+        "title": "PDF Böl",
+        "desc": "İstediğin sayfa aralığını ayrı dosyaya çıkar.",
+        "badge": null
+      },
+      "edit": {
+        "title": "PDF Düzenle",
+        "desc": "Sayfa sil, yeniden sırala, sürükle & bırak.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "PDF Filigran",
+        "desc": "GİZLİ, TASLAK gibi damgaları sayfalarına ekle.",
+        "badge": "Yeni"
+      },
+      "sign": {
+        "title": "PDF İmzala",
+        "desc": "İmzanı çiz ve PDF sayfasına göm.",
+        "badge": "Yeni"
+      },
+      "toWord": {
+        "title": "PDF → Word",
+        "desc": "PDF dosyasını Word formatına dönüştür.",
+        "badge": null
+      },
+      "lock": {
+        "title": "PDF Şifrele",
+        "desc": "PDF'ini şifreleme ile parola korumasına al.",
+        "badge": "Yeni"
+      },
+      "unlock": {
+        "title": "PDF Şifre Kaldır",
+        "desc": "PDF dosyasından parola korumasını kaldır.",
+        "badge": "Yeni"
+      },
+      "crop": {
+        "title": "PDF Kırp",
+        "desc": "PDF'indeki her sayfanın kenar boşluklarını kırp.",
+        "badge": "Yeni"
+      },
+      "formFill": {
+        "title": "PDF Form Doldur",
+        "desc": "PDF'deki metin alanlarını, onay kutularını ve açılır listeleri doldur.",
+        "badge": "Yeni"
+      },
+      "annotate": {
+        "title": "PDF Açıklama Ekle",
+        "desc": "PDF'ine çizim, vurgulama ve metin notları ekle.",
+        "badge": "Yeni"
+      }
     },
     "image": {
-      "compress":  { "title": "Görsel Sıkıştır",   "desc": "JPG, PNG ve WEBP dosyalarını kalite kaybı olmadan küçült.",   "badge": "Popüler" },
-      "removeBg":  { "title": "Arka Plan Sil",     "desc": "Tek tıkla AI ile arka planı kaldır.",                         "badge": "AI" },
-      "convert":   { "title": "Format Dönüştür",   "desc": "JPG ↔ PNG ↔ WEBP arasında anında dönüştür.",                 "badge": null },
-      "watermark": { "title": "Filigran Ekle",     "desc": "Görselinin üzerine özel metin filigranı ekle.",               "badge": "Yeni" },
-      "addText":   { "title": "Görsele Metin Ekle","desc": "Görselin istediğin yerine tıkla ve metin yerleştir.",         "badge": "Yeni" }
+      "compress": {
+        "title": "Görsel Sıkıştır",
+        "desc": "JPG, PNG ve WEBP dosyalarını kalite kaybı olmadan küçült.",
+        "badge": "Popüler"
+      },
+      "removeBg": {
+        "title": "Arka Plan Sil",
+        "desc": "Tek tıkla AI ile arka planı kaldır.",
+        "badge": "AI"
+      },
+      "convert": {
+        "title": "Format Dönüştür",
+        "desc": "JPG ↔ PNG ↔ WEBP arasında anında dönüştür.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "Filigran Ekle",
+        "desc": "Görselinin üzerine özel metin filigranı ekle.",
+        "badge": "Yeni"
+      },
+      "addText": {
+        "title": "Görsele Metin Ekle",
+        "desc": "Görselin istediğin yerine tıkla ve metin yerleştir.",
+        "badge": "Yeni"
+      }
     },
     "convert": {
-      "wordToPdf":     { "title": "Word → PDF",       "desc": "DOCX dosyanı anında profesyonel PDF'e dönüştür.",  "badge": null },
-      "excelToPdf":    { "title": "Excel → PDF",      "desc": "XLSX/XLS dosyalarını PDF'e dönüştür.",             "badge": null },
-      "htmlToPdf":     { "title": "HTML → PDF",       "desc": "HTML kodunu veya dosyasını PDF'e dönüştür.",       "badge": null },
-      "markdownToPdf": { "title": "Markdown → PDF",   "desc": "Markdown metnini PDF'e dönüştür.",                 "badge": null }
+      "wordToPdf": {
+        "title": "Word → PDF",
+        "desc": "DOCX dosyanı anında profesyonel PDF'e dönüştür.",
+        "badge": null
+      },
+      "excelToPdf": {
+        "title": "Excel → PDF",
+        "desc": "XLSX/XLS dosyalarını PDF'e dönüştür.",
+        "badge": null
+      },
+      "htmlToPdf": {
+        "title": "HTML → PDF",
+        "desc": "HTML kodunu veya dosyasını PDF'e dönüştür.",
+        "badge": null
+      },
+      "markdownToPdf": {
+        "title": "Markdown → PDF",
+        "desc": "Markdown metnini PDF'e dönüştür.",
+        "badge": null
+      }
     },
     "video": {
-      "compress": { "title": "Video Sıkıştır", "desc": "MP4, MOV videolarını kalite kaybı olmadan küçült.",     "badge": "Yeni" },
-      "trim":     { "title": "Video Kes",      "desc": "Videonun istediğin bölümünü kes ve indir.",             "badge": "Yeni" },
-      "toMp3":    { "title": "Video → MP3",   "desc": "Videodan sesi çıkar ve MP3 olarak indir.",              "badge": "Yeni" },
-      "convert":  { "title": "Video Dönüştür","desc": "MP4, WEBM, AVI, MOV arasında format değiştir.",         "badge": "Yeni" },
-      "toGif":    { "title": "Video → GIF",   "desc": "Video klibinden animasyonlu GIF oluştur.",              "badge": "Yeni" },
-      "merge":    { "title": "Video Birleştir","desc": "Birden fazla videoyu tek dosyada birleştir.",           "badge": "Yeni" },
-      "mute":     { "title": "Video Sessize Al","desc": "Video dosyasındaki tüm sesi kaldır.",                 "badge": "Yeni" },
-      "rotate":   { "title": "Video Döndür",  "desc": "Videonuzu 90°, 180° döndür veya çevir.",               "badge": "Yeni" }
+      "compress": {
+        "title": "Video Sıkıştır",
+        "desc": "MP4, MOV videolarını kalite kaybı olmadan küçült.",
+        "badge": "Yeni"
+      },
+      "trim": {
+        "title": "Video Kes",
+        "desc": "Videonun istediğin bölümünü kes ve indir.",
+        "badge": "Yeni"
+      },
+      "toMp3": {
+        "title": "Video → MP3",
+        "desc": "Videodan sesi çıkar ve MP3 olarak indir.",
+        "badge": "Yeni"
+      },
+      "convert": {
+        "title": "Video Dönüştür",
+        "desc": "MP4, WEBM, AVI, MOV arasında format değiştir.",
+        "badge": "Yeni"
+      },
+      "toGif": {
+        "title": "Video → GIF",
+        "desc": "Video klibinden animasyonlu GIF oluştur.",
+        "badge": "Yeni"
+      },
+      "merge": {
+        "title": "Video Birleştir",
+        "desc": "Birden fazla videoyu tek dosyada birleştir.",
+        "badge": "Yeni"
+      },
+      "mute": {
+        "title": "Video Sessize Al",
+        "desc": "Video dosyasındaki tüm sesi kaldır.",
+        "badge": "Yeni"
+      },
+      "rotate": {
+        "title": "Video Döndür",
+        "desc": "Videonuzu 90°, 180° döndür veya çevir.",
+        "badge": "Yeni"
+      }
     }
   },
   "about": {
@@ -153,9 +277,18 @@
       "description": "Deepoda, günlük dijital görevleri dakikalar yerine saniyeler içinde tamamlamanıza yardımcı olan ücretsiz bir araç platformudur."
     },
     "cards": [
-      { "title": "Misyon",    "desc": "Herkesin teknik bilgi olmadan kullanabileceği hızlı ve güvenli araçlar sunmak." },
-      { "title": "Değerler",  "desc": "Gizlilik en önceliğimizdir. Dosyalarınız asla tarayıcınızı terk etmez." },
-      { "title": "Teknoloji", "desc": "WebAssembly, Canvas API ve modern kütüphanelerle desteklenen sunucusuz mimari." }
+      {
+        "title": "Misyon",
+        "desc": "Herkesin teknik bilgi olmadan kullanabileceği hızlı ve güvenli araçlar sunmak."
+      },
+      {
+        "title": "Değerler",
+        "desc": "Gizlilik en önceliğimizdir. Dosyalarınız asla tarayıcınızı terk etmez."
+      },
+      {
+        "title": "Teknoloji",
+        "desc": "WebAssembly, Canvas API ve modern kütüphanelerle desteklenen sunucusuz mimari."
+      }
     ],
     "whyExist": {
       "heading": "Neden varız",
@@ -180,20 +313,34 @@
     "heading": "İletişime Geç",
     "description": "Öneri, hata bildirimi veya iş birliği teklifleri için formu doldurun.",
     "cards": [
-      { "title": "Genel Destek",   "desc": "Araçlarımız hakkında sorularınız için." },
-      { "title": "Hata Bildirimi", "desc": "Bir sorun mu buldunuz? Bize bildirin." },
-      { "title": "İş Birliği",     "desc": "Entegrasyon veya reklam teklifleri için." }
+      {
+        "title": "Genel Destek",
+        "desc": "Araçlarımız hakkında sorularınız için."
+      },
+      {
+        "title": "Hata Bildirimi",
+        "desc": "Bir sorun mu buldunuz? Bize bildirin."
+      },
+      {
+        "title": "İş Birliği",
+        "desc": "Entegrasyon veya reklam teklifleri için."
+      }
     ],
     "form": {
-      "fullName":    "Ad Soyad",
+      "fullName": "Ad Soyad",
       "namePlaceholder": "Adınız",
-      "email":       "E-posta",
+      "email": "E-posta",
       "emailPlaceholder": "siz@ornek.com",
-      "subject":     "Konu",
-      "options": ["Genel Destek", "Hata Bildirimi", "İş Birliği", "Diğer"],
-      "message":     "Mesaj",
+      "subject": "Konu",
+      "options": [
+        "Genel Destek",
+        "Hata Bildirimi",
+        "İş Birliği",
+        "Diğer"
+      ],
+      "message": "Mesaj",
       "messagePlaceholder": "Mesajınızı buraya yazın...",
-      "send":        "Gönder"
+      "send": "Gönder"
     }
   },
   "notFound": {

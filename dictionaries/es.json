@@ -2,7 +2,13 @@
   "meta": {
     "siteTitle": "Deepoda – Herramientas Online para Simplificar tu Flujo de Trabajo",
     "siteDescription": "Combina PDFs, comprime imágenes, elimina fondos y más. En segundos, gratis, en tu navegador. Tus datos nunca salen de tu dispositivo.",
-    "siteKeywords": ["unir pdf", "comprimir imagen", "eliminar fondo", "herramientas online", "gratis"]
+    "siteKeywords": [
+      "unir pdf",
+      "comprimir imagen",
+      "eliminar fondo",
+      "herramientas online",
+      "gratis"
+    ]
   },
   "navbar": {
     "howItWorks": "Cómo Funciona",
@@ -40,7 +46,8 @@
       "tools": "Herramientas Gratis",
       "cost": "Costo",
       "inBrowser": "En Navegador",
-      "gdpr": "Cumple GDPR"
+      "gdpr": "Cumple GDPR",
+      "filesProcessed": "Archivos Procesados"
     },
     "toolsSection": {
       "heading": "Todas las herramientas, una plataforma",
@@ -101,45 +108,162 @@
       "heading": "Empieza ahora. Sin registro.",
       "description": "Miles de personas aceleran su flujo de trabajo con Deepoda cada día.",
       "button": "Ver Todas las Herramientas",
-      "badges": ["Gratis", "Sin registro", "Sin servidor", "Cumple GDPR"]
+      "badges": [
+        "Gratis",
+        "Sin registro",
+        "Sin servidor",
+        "Cumple GDPR"
+      ]
     }
   },
   "tools": {
     "pdf": {
-      "merge":     { "title": "Combinar PDF",      "desc": "Combina varios PDFs en un solo documento.",                          "badge": "Popular" },
-      "split":     { "title": "Dividir PDF",       "desc": "Extrae cualquier rango de páginas en un archivo separado.",          "badge": null },
-      "edit":      { "title": "Editar PDF",        "desc": "Elimina páginas, reordena, arrastra y suelta.",                      "badge": null },
-      "watermark": { "title": "Marca de Agua PDF", "desc": "Añade sellos CONFIDENCIAL, BORRADOR y más a tus páginas.",           "badge": "Nuevo" },
-      "sign":      { "title": "Firmar PDF",        "desc": "Dibuja tu firma e incrústala en una página PDF.",                    "badge": "Nuevo" },
-      "toWord":    { "title": "PDF → Word",        "desc": "Convierte un archivo PDF al formato Word.",                          "badge": null },
-      "lock":      { "title": "Bloquear PDF",      "desc": "Protege tu PDF con contraseña y cifrado.",                           "badge": "Nuevo" },
-      "unlock":    { "title": "Desbloquear PDF",   "desc": "Elimina la protección con contraseña de un PDF.",                    "badge": "Nuevo" },
-      "crop":      { "title": "Recortar PDF",      "desc": "Recorta los márgenes de cada página de tu PDF.",                     "badge": "Nuevo" },
-      "formFill":  { "title": "Rellenar Formulario PDF", "desc": "Rellena campos de texto, casillas y desplegables en un PDF.",   "badge": "Nuevo" },
-      "annotate":  { "title": "Anotar PDF",        "desc": "Dibuja, resalta y añade notas de texto a tu PDF.",                   "badge": "Nuevo" }
+      "merge": {
+        "title": "Combinar PDF",
+        "desc": "Combina varios PDFs en un solo documento.",
+        "badge": "Popular"
+      },
+      "split": {
+        "title": "Dividir PDF",
+        "desc": "Extrae cualquier rango de páginas en un archivo separado.",
+        "badge": null
+      },
+      "edit": {
+        "title": "Editar PDF",
+        "desc": "Elimina páginas, reordena, arrastra y suelta.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "Marca de Agua PDF",
+        "desc": "Añade sellos CONFIDENCIAL, BORRADOR y más a tus páginas.",
+        "badge": "Nuevo"
+      },
+      "sign": {
+        "title": "Firmar PDF",
+        "desc": "Dibuja tu firma e incrústala en una página PDF.",
+        "badge": "Nuevo"
+      },
+      "toWord": {
+        "title": "PDF → Word",
+        "desc": "Convierte un archivo PDF al formato Word.",
+        "badge": null
+      },
+      "lock": {
+        "title": "Bloquear PDF",
+        "desc": "Protege tu PDF con contraseña y cifrado.",
+        "badge": "Nuevo"
+      },
+      "unlock": {
+        "title": "Desbloquear PDF",
+        "desc": "Elimina la protección con contraseña de un PDF.",
+        "badge": "Nuevo"
+      },
+      "crop": {
+        "title": "Recortar PDF",
+        "desc": "Recorta los márgenes de cada página de tu PDF.",
+        "badge": "Nuevo"
+      },
+      "formFill": {
+        "title": "Rellenar Formulario PDF",
+        "desc": "Rellena campos de texto, casillas y desplegables en un PDF.",
+        "badge": "Nuevo"
+      },
+      "annotate": {
+        "title": "Anotar PDF",
+        "desc": "Dibuja, resalta y añade notas de texto a tu PDF.",
+        "badge": "Nuevo"
+      }
     },
     "image": {
-      "compress":  { "title": "Comprimir Imagen",  "desc": "Reduce archivos JPG, PNG y WEBP sin pérdida de calidad.",            "badge": "Popular" },
-      "removeBg":  { "title": "Eliminar Fondo",    "desc": "Elimina el fondo con un clic usando IA.",                            "badge": "IA" },
-      "convert":   { "title": "Convertir Formato", "desc": "Convierte instantáneamente entre JPG ↔ PNG ↔ WEBP.",               "badge": null },
-      "watermark": { "title": "Añadir Marca de Agua","desc": "Añade una marca de agua de texto personalizada a tu imagen.",      "badge": "Nuevo" },
-      "addText":   { "title": "Añadir Texto a Imagen","desc": "Haz clic en cualquier parte de la imagen para colocar texto.",    "badge": "Nuevo" }
+      "compress": {
+        "title": "Comprimir Imagen",
+        "desc": "Reduce archivos JPG, PNG y WEBP sin pérdida de calidad.",
+        "badge": "Popular"
+      },
+      "removeBg": {
+        "title": "Eliminar Fondo",
+        "desc": "Elimina el fondo con un clic usando IA.",
+        "badge": "IA"
+      },
+      "convert": {
+        "title": "Convertir Formato",
+        "desc": "Convierte instantáneamente entre JPG ↔ PNG ↔ WEBP.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "Añadir Marca de Agua",
+        "desc": "Añade una marca de agua de texto personalizada a tu imagen.",
+        "badge": "Nuevo"
+      },
+      "addText": {
+        "title": "Añadir Texto a Imagen",
+        "desc": "Haz clic en cualquier parte de la imagen para colocar texto.",
+        "badge": "Nuevo"
+      }
     },
     "convert": {
-      "wordToPdf":     { "title": "Word → PDF",     "desc": "Convierte tu archivo DOCX a PDF profesional al instante.",  "badge": null },
-      "excelToPdf":    { "title": "Excel → PDF",    "desc": "Convierte archivos XLSX/XLS a PDF.",                        "badge": null },
-      "htmlToPdf":     { "title": "HTML → PDF",     "desc": "Convierte código HTML o un archivo a PDF.",                 "badge": null },
-      "markdownToPdf": { "title": "Markdown → PDF", "desc": "Convierte texto Markdown a PDF.",                           "badge": null }
+      "wordToPdf": {
+        "title": "Word → PDF",
+        "desc": "Convierte tu archivo DOCX a PDF profesional al instante.",
+        "badge": null
+      },
+      "excelToPdf": {
+        "title": "Excel → PDF",
+        "desc": "Convierte archivos XLSX/XLS a PDF.",
+        "badge": null
+      },
+      "htmlToPdf": {
+        "title": "HTML → PDF",
+        "desc": "Convierte código HTML o un archivo a PDF.",
+        "badge": null
+      },
+      "markdownToPdf": {
+        "title": "Markdown → PDF",
+        "desc": "Convierte texto Markdown a PDF.",
+        "badge": null
+      }
     },
     "video": {
-      "compress": { "title": "Comprimir Video",   "desc": "Reduce videos MP4, MOV sin perder calidad.",                  "badge": "Nuevo" },
-      "trim":     { "title": "Recortar Video",    "desc": "Corta cualquier parte de tu video y descárgala.",            "badge": "Nuevo" },
-      "toMp3":    { "title": "Video → MP3",       "desc": "Extrae audio del video y descárgalo como MP3.",             "badge": "Nuevo" },
-      "convert":  { "title": "Convertir Video",   "desc": "Cambia formato entre MP4, WEBM, AVI, MOV.",                 "badge": "Nuevo" },
-      "toGif":    { "title": "Video → GIF",       "desc": "Crea un GIF animado a partir de un clip de video.",         "badge": "Nuevo" },
-      "merge":    { "title": "Unir Videos",       "desc": "Une varios videos en un solo archivo.",                     "badge": "Nuevo" },
-      "mute":     { "title": "Silenciar Video",   "desc": "Elimina todo el audio de un archivo de video.",             "badge": "Nuevo" },
-      "rotate":   { "title": "Rotar Video",       "desc": "Rota o voltea tu video 90°, 180°.",                        "badge": "Nuevo" }
+      "compress": {
+        "title": "Comprimir Video",
+        "desc": "Reduce videos MP4, MOV sin perder calidad.",
+        "badge": "Nuevo"
+      },
+      "trim": {
+        "title": "Recortar Video",
+        "desc": "Corta cualquier parte de tu video y descárgala.",
+        "badge": "Nuevo"
+      },
+      "toMp3": {
+        "title": "Video → MP3",
+        "desc": "Extrae audio del video y descárgalo como MP3.",
+        "badge": "Nuevo"
+      },
+      "convert": {
+        "title": "Convertir Video",
+        "desc": "Cambia formato entre MP4, WEBM, AVI, MOV.",
+        "badge": "Nuevo"
+      },
+      "toGif": {
+        "title": "Video → GIF",
+        "desc": "Crea un GIF animado a partir de un clip de video.",
+        "badge": "Nuevo"
+      },
+      "merge": {
+        "title": "Unir Videos",
+        "desc": "Une varios videos en un solo archivo.",
+        "badge": "Nuevo"
+      },
+      "mute": {
+        "title": "Silenciar Video",
+        "desc": "Elimina todo el audio de un archivo de video.",
+        "badge": "Nuevo"
+      },
+      "rotate": {
+        "title": "Rotar Video",
+        "desc": "Rota o voltea tu video 90°, 180°.",
+        "badge": "Nuevo"
+      }
     }
   },
   "about": {
@@ -153,9 +277,18 @@
       "description": "Deepoda es una plataforma de herramientas gratuitas que te ayuda a completar tareas digitales cotidianas en segundos en lugar de minutos."
     },
     "cards": [
-      { "title": "Misión",     "desc": "Proporcionar herramientas rápidas y seguras que cualquiera pueda usar sin conocimientos técnicos." },
-      { "title": "Valores",    "desc": "La privacidad es nuestra máxima prioridad. Tus archivos nunca salen de tu navegador." },
-      { "title": "Tecnología", "desc": "Arquitectura sin servidor impulsada por WebAssembly, Canvas API y bibliotecas modernas." }
+      {
+        "title": "Misión",
+        "desc": "Proporcionar herramientas rápidas y seguras que cualquiera pueda usar sin conocimientos técnicos."
+      },
+      {
+        "title": "Valores",
+        "desc": "La privacidad es nuestra máxima prioridad. Tus archivos nunca salen de tu navegador."
+      },
+      {
+        "title": "Tecnología",
+        "desc": "Arquitectura sin servidor impulsada por WebAssembly, Canvas API y bibliotecas modernas."
+      }
     ],
     "whyExist": {
       "heading": "Por qué existimos",
@@ -180,20 +313,34 @@
     "heading": "Contáctanos",
     "description": "Completa el formulario para sugerencias, reportes de errores o consultas de colaboración.",
     "cards": [
-      { "title": "Soporte General",  "desc": "Para preguntas sobre nuestras herramientas." },
-      { "title": "Reporte de Error", "desc": "¿Encontraste un problema? Haznos saber." },
-      { "title": "Colaboración",     "desc": "Para propuestas de integración o publicidad." }
+      {
+        "title": "Soporte General",
+        "desc": "Para preguntas sobre nuestras herramientas."
+      },
+      {
+        "title": "Reporte de Error",
+        "desc": "¿Encontraste un problema? Haznos saber."
+      },
+      {
+        "title": "Colaboración",
+        "desc": "Para propuestas de integración o publicidad."
+      }
     ],
     "form": {
-      "fullName":    "Nombre Completo",
+      "fullName": "Nombre Completo",
       "namePlaceholder": "Tu nombre",
-      "email":       "Correo Electrónico",
+      "email": "Correo Electrónico",
       "emailPlaceholder": "tu@ejemplo.com",
-      "subject":     "Asunto",
-      "options": ["Soporte General", "Reporte de Error", "Colaboración", "Otro"],
-      "message":     "Mensaje",
+      "subject": "Asunto",
+      "options": [
+        "Soporte General",
+        "Reporte de Error",
+        "Colaboración",
+        "Otro"
+      ],
+      "message": "Mensaje",
       "messagePlaceholder": "Escribe tu mensaje aquí...",
-      "send":        "Enviar Mensaje"
+      "send": "Enviar Mensaje"
     }
   },
   "notFound": {

@@ -2,7 +2,13 @@
   "meta": {
     "siteTitle": "Deepoda – Online Tools to Simplify Your Workflow",
     "siteDescription": "Merge PDFs, compress images, remove backgrounds and more. In seconds, free, right in your browser. Your data never leaves your device.",
-    "siteKeywords": ["merge pdf", "compress image", "remove background", "online tools", "free"]
+    "siteKeywords": [
+      "merge pdf",
+      "compress image",
+      "remove background",
+      "online tools",
+      "free"
+    ]
   },
   "navbar": {
     "howItWorks": "How It Works",
@@ -40,7 +46,8 @@
       "tools": "Free Tools",
       "cost": "Cost",
       "inBrowser": "In Browser",
-      "gdpr": "Compliant"
+      "gdpr": "Compliant",
+      "filesProcessed": "Files Processed"
     },
     "toolsSection": {
       "heading": "All tools, one platform",
@@ -101,45 +108,162 @@
       "heading": "Start now. No sign-up required.",
       "description": "Thousands of people speed up their workflows with Deepoda every day.",
       "button": "Browse All Tools",
-      "badges": ["Free", "No sign-up", "No server", "GDPR compliant"]
+      "badges": [
+        "Free",
+        "No sign-up",
+        "No server",
+        "GDPR compliant"
+      ]
     }
   },
   "tools": {
     "pdf": {
-      "merge":     { "title": "Merge PDF",       "desc": "Combine multiple PDFs into a single document.",              "badge": "Popular" },
-      "split":     { "title": "Split PDF",        "desc": "Extract any page range into a separate file.",              "badge": null },
-      "edit":      { "title": "Edit PDF",         "desc": "Delete pages, reorder, drag & drop.",                       "badge": null },
-      "watermark": { "title": "PDF Watermark",    "desc": "Stamp CONFIDENTIAL, DRAFT and more onto your pages.",       "badge": "New" },
-      "sign":      { "title": "Sign PDF",         "desc": "Draw your signature and embed it into a PDF page.",         "badge": "New" },
-      "toWord":    { "title": "PDF → Word",       "desc": "Convert a PDF file to Word format.",                        "badge": null },
-      "lock":      { "title": "Lock PDF",         "desc": "Password-protect your PDF with encryption.",                "badge": "New" },
-      "unlock":    { "title": "Unlock PDF",       "desc": "Remove password protection from a PDF file.",               "badge": "New" },
-      "crop":      { "title": "Crop PDF",         "desc": "Trim the margins of every page in your PDF.",               "badge": "New" },
-      "formFill":  { "title": "Fill PDF Form",    "desc": "Fill in text fields, checkboxes and dropdowns in a PDF.",   "badge": "New" },
-      "annotate":  { "title": "Annotate PDF",     "desc": "Draw, highlight and add text notes to your PDF.",           "badge": "New" }
+      "merge": {
+        "title": "Merge PDF",
+        "desc": "Combine multiple PDFs into a single document.",
+        "badge": "Popular"
+      },
+      "split": {
+        "title": "Split PDF",
+        "desc": "Extract any page range into a separate file.",
+        "badge": null
+      },
+      "edit": {
+        "title": "Edit PDF",
+        "desc": "Delete pages, reorder, drag & drop.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "PDF Watermark",
+        "desc": "Stamp CONFIDENTIAL, DRAFT and more onto your pages.",
+        "badge": "New"
+      },
+      "sign": {
+        "title": "Sign PDF",
+        "desc": "Draw your signature and embed it into a PDF page.",
+        "badge": "New"
+      },
+      "toWord": {
+        "title": "PDF → Word",
+        "desc": "Convert a PDF file to Word format.",
+        "badge": null
+      },
+      "lock": {
+        "title": "Lock PDF",
+        "desc": "Password-protect your PDF with encryption.",
+        "badge": "New"
+      },
+      "unlock": {
+        "title": "Unlock PDF",
+        "desc": "Remove password protection from a PDF file.",
+        "badge": "New"
+      },
+      "crop": {
+        "title": "Crop PDF",
+        "desc": "Trim the margins of every page in your PDF.",
+        "badge": "New"
+      },
+      "formFill": {
+        "title": "Fill PDF Form",
+        "desc": "Fill in text fields, checkboxes and dropdowns in a PDF.",
+        "badge": "New"
+      },
+      "annotate": {
+        "title": "Annotate PDF",
+        "desc": "Draw, highlight and add text notes to your PDF.",
+        "badge": "New"
+      }
     },
     "image": {
-      "compress":  { "title": "Compress Image",   "desc": "Shrink JPG, PNG, and WEBP files without quality loss.",    "badge": "Popular" },
-      "removeBg":  { "title": "Remove Background","desc": "Remove the background in one click with AI.",               "badge": "AI" },
-      "convert":   { "title": "Convert Format",   "desc": "Instantly convert between JPG ↔ PNG ↔ WEBP.",              "badge": null },
-      "watermark": { "title": "Add Watermark",    "desc": "Stamp custom text watermark on your image.",                "badge": "New" },
-      "addText":   { "title": "Add Text to Image","desc": "Click anywhere on the image to place custom text.",         "badge": "New" }
+      "compress": {
+        "title": "Compress Image",
+        "desc": "Shrink JPG, PNG, and WEBP files without quality loss.",
+        "badge": "Popular"
+      },
+      "removeBg": {
+        "title": "Remove Background",
+        "desc": "Remove the background in one click with AI.",
+        "badge": "AI"
+      },
+      "convert": {
+        "title": "Convert Format",
+        "desc": "Instantly convert between JPG ↔ PNG ↔ WEBP.",
+        "badge": null
+      },
+      "watermark": {
+        "title": "Add Watermark",
+        "desc": "Stamp custom text watermark on your image.",
+        "badge": "New"
+      },
+      "addText": {
+        "title": "Add Text to Image",
+        "desc": "Click anywhere on the image to place custom text.",
+        "badge": "New"
+      }
     },
     "convert": {
-      "wordToPdf":     { "title": "Word → PDF",       "desc": "Convert your DOCX file to a professional PDF instantly.", "badge": null },
-      "excelToPdf":    { "title": "Excel → PDF",      "desc": "Convert XLSX/XLS files to PDF.",                          "badge": null },
-      "htmlToPdf":     { "title": "HTML → PDF",       "desc": "Convert HTML code or a file to PDF.",                     "badge": null },
-      "markdownToPdf": { "title": "Markdown → PDF",   "desc": "Convert Markdown text to PDF.",                           "badge": null }
+      "wordToPdf": {
+        "title": "Word → PDF",
+        "desc": "Convert your DOCX file to a professional PDF instantly.",
+        "badge": null
+      },
+      "excelToPdf": {
+        "title": "Excel → PDF",
+        "desc": "Convert XLSX/XLS files to PDF.",
+        "badge": null
+      },
+      "htmlToPdf": {
+        "title": "HTML → PDF",
+        "desc": "Convert HTML code or a file to PDF.",
+        "badge": null
+      },
+      "markdownToPdf": {
+        "title": "Markdown → PDF",
+        "desc": "Convert Markdown text to PDF.",
+        "badge": null
+      }
     },
     "video": {
-      "compress": { "title": "Compress Video", "desc": "Shrink MP4, MOV videos without losing quality.",          "badge": "New" },
-      "trim":     { "title": "Trim Video",     "desc": "Cut any portion of your video and download it.",          "badge": "New" },
-      "toMp3":    { "title": "Video → MP3",    "desc": "Extract audio from video and download as MP3.",           "badge": "New" },
-      "convert":  { "title": "Convert Video",  "desc": "Switch format between MP4, WEBM, AVI, MOV.",             "badge": "New" },
-      "toGif":    { "title": "Video → GIF",    "desc": "Create an animated GIF from a video clip.",              "badge": "New" },
-      "merge":    { "title": "Merge Videos",   "desc": "Join multiple videos into a single file.",               "badge": "New" },
-      "mute":     { "title": "Mute Video",     "desc": "Remove all audio from a video file.",                    "badge": "New" },
-      "rotate":   { "title": "Rotate Video",   "desc": "Rotate or flip your video 90°, 180°.",                  "badge": "New" }
+      "compress": {
+        "title": "Compress Video",
+        "desc": "Shrink MP4, MOV videos without losing quality.",
+        "badge": "New"
+      },
+      "trim": {
+        "title": "Trim Video",
+        "desc": "Cut any portion of your video and download it.",
+        "badge": "New"
+      },
+      "toMp3": {
+        "title": "Video → MP3",
+        "desc": "Extract audio from video and download as MP3.",
+        "badge": "New"
+      },
+      "convert": {
+        "title": "Convert Video",
+        "desc": "Switch format between MP4, WEBM, AVI, MOV.",
+        "badge": "New"
+      },
+      "toGif": {
+        "title": "Video → GIF",
+        "desc": "Create an animated GIF from a video clip.",
+        "badge": "New"
+      },
+      "merge": {
+        "title": "Merge Videos",
+        "desc": "Join multiple videos into a single file.",
+        "badge": "New"
+      },
+      "mute": {
+        "title": "Mute Video",
+        "desc": "Remove all audio from a video file.",
+        "badge": "New"
+      },
+      "rotate": {
+        "title": "Rotate Video",
+        "desc": "Rotate or flip your video 90°, 180°.",
+        "badge": "New"
+      }
     }
   },
   "about": {
@@ -153,9 +277,18 @@
       "description": "Deepoda is a free tool platform that helps you complete everyday digital tasks in seconds instead of minutes."
     },
     "cards": [
-      { "title": "Mission",    "desc": "Provide fast, secure tools that anyone can use without technical knowledge." },
-      { "title": "Values",     "desc": "Privacy is our top priority. Your files never leave your browser." },
-      { "title": "Technology", "desc": "Serverless architecture powered by WebAssembly, Canvas API, and modern libraries." }
+      {
+        "title": "Mission",
+        "desc": "Provide fast, secure tools that anyone can use without technical knowledge."
+      },
+      {
+        "title": "Values",
+        "desc": "Privacy is our top priority. Your files never leave your browser."
+      },
+      {
+        "title": "Technology",
+        "desc": "Serverless architecture powered by WebAssembly, Canvas API, and modern libraries."
+      }
     ],
     "whyExist": {
       "heading": "Why we exist",
@@ -180,20 +313,34 @@
     "heading": "Contact Us",
     "description": "Fill out the form for suggestions, bug reports, or collaboration inquiries.",
     "cards": [
-      { "title": "General Support", "desc": "For questions about our tools." },
-      { "title": "Bug Report",      "desc": "Found an issue? Let us know." },
-      { "title": "Collaboration",   "desc": "For integration or advertising proposals." }
+      {
+        "title": "General Support",
+        "desc": "For questions about our tools."
+      },
+      {
+        "title": "Bug Report",
+        "desc": "Found an issue? Let us know."
+      },
+      {
+        "title": "Collaboration",
+        "desc": "For integration or advertising proposals."
+      }
     ],
     "form": {
-      "fullName":    "Full Name",
+      "fullName": "Full Name",
       "namePlaceholder": "Your Name",
-      "email":       "Email",
+      "email": "Email",
       "emailPlaceholder": "you@example.com",
-      "subject":     "Subject",
-      "options": ["General Support", "Bug Report", "Collaboration", "Other"],
-      "message":     "Message",
+      "subject": "Subject",
+      "options": [
+        "General Support",
+        "Bug Report",
+        "Collaboration",
+        "Other"
+      ],
+      "message": "Message",
       "messagePlaceholder": "Write your message here...",
-      "send":        "Send Message"
+      "send": "Send Message"
     }
   },
   "notFound": {

@@ -8,6 +8,7 @@ import {
   Video, Music, Film, Link, VolumeX, RotateCw,
   Lock, LockOpen,
 } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import type { getDictionary } from "@/lib/dictionaries";
 
 type Dict = Awaited<ReturnType<typeof getDictionary>>;
@@ -114,7 +115,13 @@ export default function HomeClient({ dict, lang }: Props) {
       {/* ── STATS ────────────────────────────────────────── */}
       <section className="py-10 border-y bg-gray-50">
         <div className="max-w-4xl mx-auto px-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-extrabold text-gray-900">
+                <AnimatedCounter end={50000} suffix="+" />
+              </div>
+              <div className="text-sm text-gray-500 mt-1">{d.stats.filesProcessed}</div>
+            </div>
             {[
               { value: String(allTools.length), label: d.stats.tools },
               { value: "$0",   label: d.stats.cost },
