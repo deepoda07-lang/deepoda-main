@@ -46,7 +46,7 @@ function StatCard({ value, label, animated, end, suffix }: {
 /* ── Tool card ──────────────────────────────────────── */
 function ToolCard({ icon: Icon, title, desc, href, color, badge, useNow }: {
   icon: React.ElementType; title: string; desc: string; href: string;
-  color: string; badge?: string; useNow: string;
+  color: string; badge?: string | null; useNow: string;
 }) {
   return (
     <motion.a
