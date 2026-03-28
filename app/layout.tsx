@@ -25,7 +25,10 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
-      <body className={`${geist.className} bg-white text-gray-900`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()` }} />
+      </head>
+      <body className={`${geist.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors`}>
         {children}
       </body>
       <GoogleAnalytics gaId="G-EZPCYPSQ3T" />

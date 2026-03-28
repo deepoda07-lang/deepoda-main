@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { getDictionary, hasLocale, locales } from "@/lib/dictionaries";
 
 export async function generateStaticParams() {
@@ -46,7 +47,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <>
+    <ThemeProvider>
       <Navbar navDict={dict.navbar} lang={lang} />
       <main>{children}</main>
       <footer className="bg-gray-950 text-gray-400 pt-16 pb-8">
@@ -148,6 +149,6 @@ export default async function LocaleLayout({
           </div>
         </div>
       </footer>
-    </>
+    </ThemeProvider>
   );
 }

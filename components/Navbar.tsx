@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Zap, ChevronDown } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavDict {
   howItWorks: string;
@@ -65,45 +66,46 @@ export default function Navbar({ navDict, lang }: Props) {
           <span className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
             <Zap className="w-4 h-4 text-white" />
           </span>
-          <span className="text-gray-900">deep<span className="text-blue-600">oda</span></span>
+          <span className="text-gray-900 dark:text-gray-100">deep<span className="text-blue-600">oda</span></span>
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          <Link href={`${prefix}/#how-it-works`} className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+          <Link href={`${prefix}/#how-it-works`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             {navDict.howItWorks}
           </Link>
-          <Link href={`${prefix}/#tools`} className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+          <Link href={`${prefix}/#tools`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             {navDict.tools}
           </Link>
-          <Link href={`${prefix}/about`} className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+          <Link href={`${prefix}/about`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             {navDict.about}
           </Link>
-          <Link href={`${prefix}/contact`} className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors">
+          <Link href={`${prefix}/contact`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             {navDict.contact}
           </Link>
         </nav>
 
         {/* Right: CTA + Language switcher */}
         <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           {/* Language switcher */}
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               <span>{currentLocale.flag}</span>
               <span className="font-medium">{currentLocale.label}</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${langOpen ? "rotate-180" : ""}`} />
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-1 w-32 bg-white rounded-xl shadow-lg border border-gray-100 py-1 z-50">
+              <div className="absolute right-0 top-full mt-1 w-32 bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 py-1 z-50">
                 {LOCALES.map((locale) => (
                   <button
                     key={locale.code}
                     onClick={() => switchLocale(locale.code)}
-                    className={`w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 transition-colors ${
-                      locale.code === lang ? "text-blue-600 font-semibold" : "text-gray-700"
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ${
+                      locale.code === lang ? "text-blue-600 font-semibold" : "text-gray-700 dark:text-gray-300"
                     }`}
                   >
                     <span>{locale.flag}</span>
