@@ -1,9 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, Zap, ChevronDown } from "lucide-react";
+import { Zap, ChevronDown, Globe, Menu, X, ExternalLink } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { cn } from "@/lib/utils";
 
 interface NavDict {
   howItWorks: string;
@@ -25,22 +27,32 @@ const LOCALES = [
 ];
 
 export default function Navbar({ navDict, lang }: Props) {
-  const [open, setOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [langOpen, setLangOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const langRef = React.useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
+  React.useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // Build locale-prefixed path
+  // Close lang dropdown on outside click
+  React.useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   const prefix = lang === "en" ? "" : `/${lang}`;
 
-  // Switch locale: strip current locale prefix then add new one
   function switchLocale(targetLang: string) {
     let base = pathname;
     for (const loc of ["tr", "es"]) {
@@ -54,119 +66,157 @@ export default function Navbar({ navDict, lang }: Props) {
 
   const currentLocale = LOCALES.find((l) => l.code === lang) ?? LOCALES[0];
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass shadow-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link href={prefix || "/"} className="flex items-center gap-2 font-bold text-xl">
-          <span className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-            <Zap className="w-4 h-4 text-white" />
-          </span>
-          <span className="text-gray-900 dark:text-gray-100">deep<span className="text-blue-600">oda</span></span>
-        </Link>
+  const navLinks = [
+    { href: `${prefix}/#how-it-works`, label: navDict.howItWorks },
+    { href: `${prefix}/#tools`,        label: navDict.tools },
+    { href: `${prefix}/about`,         label: navDict.about },
+    { href: `${prefix}/contact`,       label: navDict.contact },
+  ];
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          <Link href={`${prefix}/#how-it-works`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            {navDict.howItWorks}
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="mx-auto max-w-6xl px-4 pt-4">
+        {/* ── Pill navbar ────────────────────────────────── */}
+        <nav
+          className={cn(
+            "flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-300",
+            scrolled
+              ? "bg-white/70 dark:bg-gray-950/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-lg shadow-black/5"
+              : "bg-white/50 dark:bg-gray-950/50 backdrop-blur-md border border-white/30 dark:border-white/5"
+          )}
+        >
+          {/* Logo */}
+          <Link
+            href={prefix || "/"}
+            className="flex items-center gap-2.5 font-bold text-xl shrink-0"
+          >
+            <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-md shadow-blue-200 dark:shadow-blue-900">
+              <Zap className="w-4 h-4 text-white" />
+            </span>
+            <span className="text-gray-900 dark:text-white">
+              deep<span className="text-blue-600">oda</span>
+            </span>
           </Link>
-          <Link href={`${prefix}/#tools`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            {navDict.tools}
-          </Link>
-          <Link href={`${prefix}/about`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            {navDict.about}
-          </Link>
-          <Link href={`${prefix}/contact`} className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            {navDict.contact}
-          </Link>
+
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-0.5">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-white/10 rounded-xl transition-all duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right actions */}
+          <div className="hidden md:flex items-center gap-1.5">
+            {/* Theme toggle */}
+            <ThemeToggle />
+
+            {/* Language switcher */}
+            <div className="relative" ref={langRef}>
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-white/10 rounded-xl transition-all duration-200"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{currentLocale.flag} {currentLocale.label}</span>
+                <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", langOpen && "rotate-180")} />
+              </button>
+
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-2 w-36 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl border border-gray-100 dark:border-gray-700 shadow-xl py-1 z-50">
+                  {LOCALES.map((locale) => (
+                    <button
+                      key={locale.code}
+                      onClick={() => switchLocale(locale.code)}
+                      className={cn(
+                        "w-full flex items-center gap-2.5 px-3 py-2 text-sm transition-colors",
+                        locale.code === lang
+                          ? "text-blue-600 font-semibold bg-blue-50 dark:bg-blue-900/30"
+                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5"
+                      )}
+                    >
+                      <span className="text-base">{locale.flag}</span>
+                      <span>{locale.label}</span>
+                      {locale.code === lang && (
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-600" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* CTA */}
+            <a
+              href="https://tools.deepoda.com"
+              className="ml-1 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-900 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              {navDict.useTools}
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-white/10 text-gray-700 dark:text-gray-300 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </nav>
 
-        {/* Right: CTA + Language switcher */}
-        <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
-          {/* Language switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              <span>{currentLocale.flag}</span>
-              <span className="font-medium">{currentLocale.label}</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${langOpen ? "rotate-180" : ""}`} />
-            </button>
-            {langOpen && (
-              <div className="absolute right-0 top-full mt-1 w-32 bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 py-1 z-50">
+        {/* ── Mobile menu ────────────────────────────────── */}
+        {mobileOpen && (
+          <div className="mt-2 rounded-2xl bg-white/90 dark:bg-gray-950/90 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl px-4 py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="px-3 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 rounded-xl transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="mt-2 pt-3 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
+              <div className="flex gap-1.5">
                 {LOCALES.map((locale) => (
                   <button
                     key={locale.code}
-                    onClick={() => switchLocale(locale.code)}
-                    className={`w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ${
-                      locale.code === lang ? "text-blue-600 font-semibold" : "text-gray-700 dark:text-gray-300"
-                    }`}
+                    onClick={() => { switchLocale(locale.code); setMobileOpen(false); }}
+                    className={cn(
+                      "flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
+                      locale.code === lang
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20"
+                    )}
                   >
                     <span>{locale.flag}</span>
                     <span>{locale.label}</span>
                   </button>
                 ))}
               </div>
-            )}
+              <ThemeToggle />
+            </div>
+
+            <a
+              href="https://tools.deepoda.com"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold bg-blue-600 text-white rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-900"
+            >
+              {navDict.useTools}
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
-
-          <a
-            href="https://tools.deepoda.com"
-            className="px-5 py-2 text-sm font-semibold bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-md shadow-blue-200"
-          >
-            {navDict.useTools}
-          </a>
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100"
-        >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        )}
       </div>
-
-      {/* Mobile nav */}
-      {open && (
-        <div className="md:hidden glass border-t px-5 py-4 flex flex-col gap-2">
-          <Link href={`${prefix}/#how-it-works`} className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>{navDict.howItWorks}</Link>
-          <Link href={`${prefix}/#tools`} className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>{navDict.tools}</Link>
-          <Link href={`${prefix}/about`} className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>{navDict.about}</Link>
-          <Link href={`${prefix}/contact`} className="px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100" onClick={() => setOpen(false)}>{navDict.contact}</Link>
-
-          {/* Mobile language switcher */}
-          <div className="flex gap-2 pt-2 border-t border-gray-100">
-            {LOCALES.map((locale) => (
-              <button
-                key={locale.code}
-                onClick={() => { switchLocale(locale.code); setOpen(false); }}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                  locale.code === lang
-                    ? "bg-blue-600 text-white font-semibold"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                <span>{locale.flag}</span>
-                <span>{locale.label}</span>
-              </button>
-            ))}
-          </div>
-
-          <a
-            href="https://tools.deepoda.com"
-            className="mt-2 px-4 py-2.5 text-sm font-semibold bg-blue-600 text-white rounded-xl text-center"
-          >
-            {navDict.useTools}
-          </a>
-        </div>
-      )}
     </header>
   );
 }
