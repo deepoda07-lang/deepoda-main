@@ -81,6 +81,65 @@ function ToolCard({ icon: Icon, title, desc, href, color, badge, useNow }: {
   );
 }
 
+/* ── Marquee ─────────────────────────────────────────── */
+const marqueeRow1 = [
+  { name: "PDF Merge",       color: "#ef4444" },
+  { name: "Image Compress",  color: "#3b82f6" },
+  { name: "Remove BG",       color: "#a855f7" },
+  { name: "Word → PDF",      color: "#22c55e" },
+  { name: "PDF Split",       color: "#f97316" },
+  { name: "Video Compress",  color: "#8b5cf6" },
+  { name: "Image Convert",   color: "#06b6d4" },
+  { name: "PDF Watermark",   color: "#eab308" },
+];
+const marqueeRow2 = [
+  { name: "Video Trim",      color: "#ec4899" },
+  { name: "PDF Edit",        color: "#f59e0b" },
+  { name: "PDF Lock",        color: "#64748b" },
+  { name: "Image Add Text",  color: "#0ea5e9" },
+  { name: "Excel → PDF",     color: "#10b981" },
+  { name: "Video to MP3",    color: "#f43f5e" },
+  { name: "HTML → PDF",      color: "#14b8a6" },
+  { name: "PDF Sign",        color: "#6366f1" },
+];
+
+function MarqueeItem({ name, color }: { name: string; color: string }) {
+  return (
+    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm mx-2 shrink-0">
+      <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
+      <span className="text-xs font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">{name}</span>
+    </div>
+  );
+}
+
+function ToolsMarquee() {
+  return (
+    <div className="group relative overflow-hidden py-4">
+      {/* Row 1 — left */}
+      <div className="flex mb-3" style={{ "--gap": "0px" } as React.CSSProperties}>
+        <div className="flex animate-marquee pause-on-hover">
+          {[...marqueeRow1, ...marqueeRow1].map((t, i) => <MarqueeItem key={i} {...t} />)}
+        </div>
+        <div className="flex animate-marquee pause-on-hover" aria-hidden>
+          {[...marqueeRow1, ...marqueeRow1].map((t, i) => <MarqueeItem key={i} {...t} />)}
+        </div>
+      </div>
+      {/* Row 2 — right */}
+      <div className="flex" style={{ "--gap": "0px" } as React.CSSProperties}>
+        <div className="flex animate-marquee-reverse pause-on-hover">
+          {[...marqueeRow2, ...marqueeRow2].map((t, i) => <MarqueeItem key={i} {...t} />)}
+        </div>
+        <div className="flex animate-marquee-reverse pause-on-hover" aria-hidden>
+          {[...marqueeRow2, ...marqueeRow2].map((t, i) => <MarqueeItem key={i} {...t} />)}
+        </div>
+      </div>
+      {/* Edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-[#0a0a0f] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-[#0a0a0f] to-transparent" />
+    </div>
+  );
+}
+
 /* ── Main component ─────────────────────────────────── */
 export default function HomeClient({ dict }: Props) {
   const d = dict.home;
@@ -121,6 +180,8 @@ export default function HomeClient({ dict }: Props) {
 
   const CATS = [d.categories.all, d.categories.pdf, d.categories.image, d.categories.convert, d.categories.video];
 
+  const hasSearch = search.trim().length > 0;
+
   const filtered = allTools.filter((t) => {
     const matchCat = activeCat === d.categories.all || t.cat === activeCat;
     const matchSearch = t.title.toLowerCase().includes(search.toLowerCase()) || t.desc.toLowerCase().includes(search.toLowerCase());
@@ -131,11 +192,13 @@ export default function HomeClient({ dict }: Props) {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-36 pb-12 px-5">
-        {/* Gradient blobs */}
+        {/* Gradient blobs + grid */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-br from-blue-400/25 via-purple-400/20 to-pink-400/15 rounded-full blur-3xl" />
-          <div className="absolute top-10 right-[-10%] w-96 h-96 bg-purple-300/20 dark:bg-purple-800/20 rounded-full blur-3xl" />
-          <div className="absolute top-40 left-[-5%] w-72 h-72 bg-blue-300/20 dark:bg-blue-800/20 rounded-full blur-3xl" />
+          <div className="hero-grid absolute inset-0" />
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-br from-indigo-400/35 via-violet-400/25 to-pink-400/20 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-[-10%] w-96 h-96 bg-gradient-to-br from-violet-400/25 to-purple-400/20 dark:from-violet-700/25 dark:to-purple-800/20 rounded-full blur-3xl" />
+          <div className="absolute top-40 left-[-5%] w-72 h-72 bg-gradient-to-br from-blue-400/25 to-cyan-400/20 dark:from-blue-700/20 dark:to-cyan-800/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-pink-300/15 dark:bg-pink-800/15 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-4xl mx-auto text-center">
@@ -144,7 +207,7 @@ export default function HomeClient({ dict }: Props) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/40 dark:to-blue-900/30 border border-indigo-100 dark:border-indigo-800/60 text-indigo-700 dark:text-indigo-300 text-sm font-medium mb-8 shadow-sm"
           >
             <Sparkles className="w-3.5 h-3.5" />
             {allTools.length} {d.badge}
@@ -182,16 +245,29 @@ export default function HomeClient({ dict }: Props) {
             <input
               type="text"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setSearch(val);
+                if (val.trim()) {
+                  setTimeout(() => document.getElementById("tools")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+                }
+              }}
               placeholder={d.search.placeholder}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl shadow-gray-100/50 dark:shadow-none text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400 text-base transition-all"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl shadow-indigo-100/50 dark:shadow-none text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 text-base transition-all"
             />
           </motion.div>
         </div>
       </section>
 
+      {/* ── TOOLS MARQUEE ────────────────────────────────── */}
+      {!hasSearch && (
+        <section className="py-2 px-0 overflow-hidden">
+          <ToolsMarquee />
+        </section>
+      )}
+
       {/* ── STATS BAR ────────────────────────────────────── */}
-      <section className="py-8 px-5">
+      {!hasSearch && <section className="py-8 px-5">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             <StatCard animated end={50000} suffix="+" label={d.stats.filesProcessed} />
@@ -201,7 +277,7 @@ export default function HomeClient({ dict }: Props) {
             <StatCard value="GDPR" label={d.stats.gdpr} />
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ── TOOLS GRID ───────────────────────────────────── */}
       <section id="tools" className="py-16 px-5">
@@ -230,7 +306,7 @@ export default function HomeClient({ dict }: Props) {
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
                   activeCat === cat
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-200 dark:shadow-blue-900"
+                    ? "bg-indigo-600 text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900"
                     : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                 )}
               >
@@ -387,7 +463,7 @@ export default function HomeClient({ dict }: Props) {
               </p>
               <a
                 href="https://tools.deepoda.com"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold bg-white text-blue-700 rounded-2xl hover:bg-blue-50 transition-all hover:scale-[1.03] active:scale-[0.98] shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold bg-white text-indigo-700 rounded-2xl hover:bg-indigo-50 transition-all hover:scale-[1.03] active:scale-[0.98] shadow-xl"
               >
                 {d.cta.button} <ArrowRight className="w-5 h-5" />
               </a>

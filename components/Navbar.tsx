@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Zap, ChevronDown, Globe, Menu, X, ExternalLink } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, ExternalLink } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -88,13 +88,15 @@ export default function Navbar({ navDict, lang }: Props) {
           {/* Logo */}
           <Link
             href={prefix || "/"}
-            className="flex items-center gap-2.5 font-bold text-xl shrink-0"
+            className="flex items-center gap-2.5 font-bold text-xl shrink-0 group"
           >
-            <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-md shadow-blue-200 dark:shadow-blue-900">
-              <Zap className="w-4 h-4 text-white" />
+            <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-md shadow-indigo-200 dark:shadow-indigo-900 group-hover:scale-105 transition-transform shrink-0">
+              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="white">
+                <path d="M4 3h9c7 0 11 4.5 11 9s-4 9-11 9H4V3zm5 4.5v9h4c3.5 0 6-2.2 6-4.5s-2.5-4.5-6-4.5H9z"/>
+              </svg>
             </span>
             <span className="text-gray-900 dark:text-white">
-              deep<span className="text-blue-600">oda</span>
+              deep<span className="text-indigo-600 dark:text-indigo-400">oda</span>
             </span>
           </Link>
 
@@ -154,7 +156,7 @@ export default function Navbar({ navDict, lang }: Props) {
             {/* CTA */}
             <a
               href="https://tools.deepoda.com"
-              className="ml-1 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-900 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="ml-1 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md shadow-indigo-200 dark:shadow-indigo-900 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               {navDict.useTools}
               <ExternalLink className="w-3.5 h-3.5" />
@@ -209,7 +211,7 @@ export default function Navbar({ navDict, lang }: Props) {
             <a
               href="https://tools.deepoda.com"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold bg-blue-600 text-white rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-900"
+              className="mt-2 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold bg-indigo-600 text-white rounded-xl shadow-md shadow-indigo-200 dark:shadow-indigo-900"
             >
               {navDict.useTools}
               <ExternalLink className="w-4 h-4" />
