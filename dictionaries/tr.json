@@ -172,6 +172,31 @@
         "title": "PDF Açıklama Ekle",
         "desc": "PDF'ine çizim, vurgulama ve metin notları ekle.",
         "badge": "Yeni"
+      },
+      "compress": {
+        "title": "PDF Sıkıştır",
+        "desc": "PDF dosya boyutunu kaliteyi koruyarak küçült.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "PDF Döndür",
+        "desc": "PDF'deki sayfaları 90°, 180° veya 270° döndür.",
+        "badge": null
+      },
+      "pageNumber": {
+        "title": "Sayfa Numarası Ekle",
+        "desc": "PDF'indeki her sayfaya sayfa numarası damgala.",
+        "badge": null
+      },
+      "toJpg": {
+        "title": "PDF → JPG",
+        "desc": "Her PDF sayfasını yüksek kaliteli JPG görseliyle dışa aktar.",
+        "badge": null
+      },
+      "fromJpg": {
+        "title": "JPG → PDF",
+        "desc": "Bir veya birden fazla JPG görselini tek PDF'e dönüştür.",
+        "badge": null
       }
     },
     "image": {
@@ -199,6 +224,46 @@
         "title": "Görsele Metin Ekle",
         "desc": "Görselin istediğin yerine tıkla ve metin yerleştir.",
         "badge": "Yeni"
+      },
+      "resize": {
+        "title": "Görsel Boyutlandır",
+        "desc": "Görsel boyutlarını piksel veya yüzde ile değiştir.",
+        "badge": null
+      },
+      "crop": {
+        "title": "Görsel Kırp",
+        "desc": "Görselinden istediğin dikdörtgen alanı kes.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "Görsel Döndür",
+        "desc": "Görselini istediğin yönde döndür veya çevir.",
+        "badge": null
+      },
+      "heicToJpg": {
+        "title": "HEIC → JPG",
+        "desc": "iPhone HEIC fotoğraflarını anında JPG'ye dönüştür.",
+        "badge": null
+      },
+      "exif": {
+        "title": "EXIF Görüntüleyici",
+        "desc": "Fotoğrafında saklanan tüm meta verileri görüntüle.",
+        "badge": null
+      },
+      "ocr": {
+        "title": "Görselden Metin (OCR)",
+        "desc": "OCR teknolojisiyle herhangi bir görselden metin çıkar.",
+        "badge": null
+      },
+      "colorPalette": {
+        "title": "Renk Paleti",
+        "desc": "Herhangi bir görselden baskın renk paletini çıkar.",
+        "badge": null
+      },
+      "toPdf": {
+        "title": "Görsel → PDF",
+        "desc": "Bir veya birden fazla görseli tek PDF dosyasına dönüştür.",
+        "badge": null
       }
     },
     "convert": {
@@ -220,6 +285,21 @@
       "markdownToPdf": {
         "title": "Markdown → PDF",
         "desc": "Markdown metnini PDF'e dönüştür.",
+        "badge": null
+      },
+      "base64": {
+        "title": "Base64 Kodla / Çöz",
+        "desc": "Herhangi bir metin veya dosyayı Base64'e kodla ya da çöz.",
+        "badge": null
+      },
+      "jsonFormat": {
+        "title": "JSON Biçimlendirici",
+        "desc": "JSON'u anında güzelleştir, küçült ve doğrula.",
+        "badge": null
+      },
+      "qrCode": {
+        "title": "QR Kod Oluşturucu",
+        "desc": "Herhangi bir URL veya metin için QR kodu oluştur.",
         "badge": null
       }
     },

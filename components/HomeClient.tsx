@@ -7,6 +7,8 @@ import {
   ArrowRight, CheckCircle2, Shield, Zap, Globe, Search,
   Edit3, Stamp, PenTool, Video, Music, Film, Link,
   VolumeX, RotateCw, Lock, LockOpen, ChevronRight, Sparkles,
+  Minimize2, Hash, ImageDown, Images, Maximize2, Crop,
+  Smartphone, Info, ScanText, Palette, FileImage, Code, Braces, QrCode,
 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
@@ -53,11 +55,11 @@ function ToolCard({ icon: Icon, title, desc, href, color, badge, useNow }: {
       href={href}
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="group relative flex flex-col gap-4 p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-blue-50 dark:hover:shadow-blue-950/30 transition-colors duration-300"
+      className="group relative flex flex-col items-center text-center gap-4 p-6 rounded-xl bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 dark:hover:shadow-blue-950/30 transition-all duration-300"
     >
       {badge && (
         <span className={cn(
-          "absolute top-3.5 right-3.5 text-[10px] font-bold px-2 py-0.5 rounded-full",
+          "absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full",
           badge === "AI" || badge === "IA" ? "bg-purple-600 text-white" :
           badge === "New" || badge === "Yeni" || badge === "Nuevo" ? "bg-emerald-500 text-white" :
           "bg-blue-600 text-white"
@@ -65,16 +67,16 @@ function ToolCard({ icon: Icon, title, desc, href, color, badge, useNow }: {
           {badge}
         </span>
       )}
-      <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center", color)}>
-        <Icon className="w-5 h-5" />
+      <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center", color)}>
+        <Icon className="w-7 h-7" />
       </div>
       <div className="flex-1">
-        <h3 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">
+        <h3 className="font-semibold text-gray-900 dark:text-white mb-1.5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">
           {title}
         </h3>
         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{desc}</p>
       </div>
-      <div className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 pt-2 border-t border-gray-100 dark:border-gray-800 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
         {useNow} <ArrowRight className="w-3.5 h-3.5" />
       </div>
     </motion.a>
@@ -146,28 +148,45 @@ export default function HomeClient({ dict }: Props) {
   const tools = dict.tools;
   const [activeCat, setActiveCat] = useState(d.categories.all);
   const [search, setSearch] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const allTools = [
-    { icon: FileText,   ...tools.pdf.merge,     href: "https://tools.deepoda.com/pdf/merge",           color: "bg-red-50 text-red-600 dark:bg-red-900/30",          cat: d.categories.pdf },
-    { icon: Scissors,   ...tools.pdf.split,      href: "https://tools.deepoda.com/pdf/split",           color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",  cat: d.categories.pdf },
-    { icon: Edit3,      ...tools.pdf.edit,       href: "https://tools.deepoda.com/pdf/edit",            color: "bg-amber-50 text-amber-600 dark:bg-amber-900/30",     cat: d.categories.pdf },
-    { icon: Stamp,      ...tools.pdf.watermark,  href: "https://tools.deepoda.com/pdf/watermark",       color: "bg-yellow-50 text-yellow-600 dark:bg-yellow-900/30",  cat: d.categories.pdf },
-    { icon: PenTool,    ...tools.pdf.sign,       href: "https://tools.deepoda.com/pdf/sign",            color: "bg-rose-50 text-rose-600 dark:bg-rose-900/30",        cat: d.categories.pdf },
-    { icon: FileOutput, ...tools.pdf.toWord,     href: "https://tools.deepoda.com/pdf/to-word",         color: "bg-pink-50 text-pink-600 dark:bg-pink-900/30",        cat: d.categories.pdf },
-    { icon: Lock,       ...tools.pdf.lock,       href: "https://tools.deepoda.com/pdf/lock",            color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",     cat: d.categories.pdf },
-    { icon: LockOpen,   ...tools.pdf.unlock,     href: "https://tools.deepoda.com/pdf/unlock",          color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",     cat: d.categories.pdf },
-    { icon: Scissors,   ...tools.pdf.crop,       href: "https://tools.deepoda.com/pdf/crop",            color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",  cat: d.categories.pdf },
-    { icon: Edit3,      ...tools.pdf.formFill,   href: "https://tools.deepoda.com/pdf/form-fill",       color: "bg-teal-50 text-teal-600 dark:bg-teal-900/30",        cat: d.categories.pdf },
-    { icon: PenTool,    ...tools.pdf.annotate,   href: "https://tools.deepoda.com/pdf/annotate",        color: "bg-violet-50 text-violet-600 dark:bg-violet-900/30",  cat: d.categories.pdf },
-    { icon: Image,      ...tools.image.compress, href: "https://tools.deepoda.com/image/compress",      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30",        cat: d.categories.image },
-    { icon: Wand2,      ...tools.image.removeBg, href: "https://tools.deepoda.com/image/remove-bg",     color: "bg-purple-50 text-purple-600 dark:bg-purple-900/30",  cat: d.categories.image },
-    { icon: RefreshCw,  ...tools.image.convert,  href: "https://tools.deepoda.com/image/convert",       color: "bg-cyan-50 text-cyan-600 dark:bg-cyan-900/30",        cat: d.categories.image },
-    { icon: Stamp,      ...tools.image.watermark,href: "https://tools.deepoda.com/image/watermark",     color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30",  cat: d.categories.image },
-    { icon: Edit3,      ...tools.image.addText,  href: "https://tools.deepoda.com/image/add-text",      color: "bg-sky-50 text-sky-600 dark:bg-sky-900/30",           cat: d.categories.image },
-    { icon: FileOutput, ...tools.convert.wordToPdf,     href: "https://tools.deepoda.com/convert/word-to-pdf",     color: "bg-green-50 text-green-600 dark:bg-green-900/30",    cat: d.categories.convert },
+    { icon: FileText,   ...tools.pdf.merge,      href: "https://tools.deepoda.com/pdf/merge",           color: "bg-red-50 text-red-600 dark:bg-red-900/30",             cat: d.categories.pdf },
+    { icon: Scissors,   ...tools.pdf.split,      href: "https://tools.deepoda.com/pdf/split",           color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.pdf },
+    { icon: Edit3,      ...tools.pdf.edit,       href: "https://tools.deepoda.com/pdf/edit",            color: "bg-amber-50 text-amber-600 dark:bg-amber-900/30",       cat: d.categories.pdf },
+    { icon: Minimize2,  ...tools.pdf.compress,   href: "https://tools.deepoda.com/pdf/compress",        color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.pdf },
+    { icon: RotateCw,   ...tools.pdf.rotate,     href: "https://tools.deepoda.com/pdf/rotate",          color: "bg-yellow-50 text-yellow-600 dark:bg-yellow-900/30",    cat: d.categories.pdf },
+    { icon: Hash,       ...tools.pdf.pageNumber, href: "https://tools.deepoda.com/pdf/page-number",     color: "bg-lime-50 text-lime-600 dark:bg-lime-900/30",          cat: d.categories.pdf },
+    { icon: ImageDown,  ...tools.pdf.toJpg,      href: "https://tools.deepoda.com/pdf/to-jpg",          color: "bg-sky-50 text-sky-600 dark:bg-sky-900/30",             cat: d.categories.pdf },
+    { icon: Images,     ...tools.pdf.fromJpg,    href: "https://tools.deepoda.com/pdf/from-jpg",        color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30",          cat: d.categories.pdf },
+    { icon: Stamp,      ...tools.pdf.watermark,  href: "https://tools.deepoda.com/pdf/watermark",       color: "bg-yellow-50 text-yellow-600 dark:bg-yellow-900/30",    cat: d.categories.pdf },
+    { icon: PenTool,    ...tools.pdf.sign,       href: "https://tools.deepoda.com/pdf/sign",            color: "bg-rose-50 text-rose-600 dark:bg-rose-900/30",          cat: d.categories.pdf },
+    { icon: FileOutput, ...tools.pdf.toWord,     href: "https://tools.deepoda.com/pdf/to-word",         color: "bg-pink-50 text-pink-600 dark:bg-pink-900/30",          cat: d.categories.pdf },
+    { icon: Lock,       ...tools.pdf.lock,       href: "https://tools.deepoda.com/pdf/lock",            color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",       cat: d.categories.pdf },
+    { icon: LockOpen,   ...tools.pdf.unlock,     href: "https://tools.deepoda.com/pdf/unlock",          color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",       cat: d.categories.pdf },
+    { icon: Scissors,   ...tools.pdf.crop,       href: "https://tools.deepoda.com/pdf/crop",            color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.pdf },
+    { icon: Edit3,      ...tools.pdf.formFill,   href: "https://tools.deepoda.com/pdf/form-fill",       color: "bg-teal-50 text-teal-600 dark:bg-teal-900/30",          cat: d.categories.pdf },
+    { icon: PenTool,    ...tools.pdf.annotate,   href: "https://tools.deepoda.com/pdf/annotate",        color: "bg-violet-50 text-violet-600 dark:bg-violet-900/30",    cat: d.categories.pdf },
+    { icon: Image,      ...tools.image.compress, href: "https://tools.deepoda.com/image/compress",      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30",          cat: d.categories.image },
+    { icon: Maximize2,  ...tools.image.resize,   href: "https://tools.deepoda.com/image/resize",        color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30",    cat: d.categories.image },
+    { icon: Crop,       ...tools.image.crop,     href: "https://tools.deepoda.com/image/crop",          color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.image },
+    { icon: RotateCw,   ...tools.image.rotate,   href: "https://tools.deepoda.com/image/rotate",        color: "bg-yellow-50 text-yellow-600 dark:bg-yellow-900/30",    cat: d.categories.image },
+    { icon: Wand2,      ...tools.image.removeBg, href: "https://tools.deepoda.com/image/remove-bg",     color: "bg-purple-50 text-purple-600 dark:bg-purple-900/30",    cat: d.categories.image },
+    { icon: RefreshCw,  ...tools.image.convert,  href: "https://tools.deepoda.com/image/convert",       color: "bg-cyan-50 text-cyan-600 dark:bg-cyan-900/30",          cat: d.categories.image },
+    { icon: Stamp,      ...tools.image.watermark,href: "https://tools.deepoda.com/image/watermark",     color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30",    cat: d.categories.image },
+    { icon: Edit3,      ...tools.image.addText,  href: "https://tools.deepoda.com/image/add-text",      color: "bg-sky-50 text-sky-600 dark:bg-sky-900/30",             cat: d.categories.image },
+    { icon: Smartphone, ...tools.image.heicToJpg,href: "https://tools.deepoda.com/image/heic-to-jpg",   color: "bg-rose-50 text-rose-600 dark:bg-rose-900/30",          cat: d.categories.image },
+    { icon: Info,       ...tools.image.exif,     href: "https://tools.deepoda.com/image/exif",          color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",       cat: d.categories.image },
+    { icon: ScanText,   ...tools.image.ocr,      href: "https://tools.deepoda.com/image/ocr",           color: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30", cat: d.categories.image },
+    { icon: Palette,    ...tools.image.colorPalette, href: "https://tools.deepoda.com/image/color-palette", color: "bg-pink-50 text-pink-600 dark:bg-pink-900/30",      cat: d.categories.image },
+    { icon: FileImage,  ...tools.image.toPdf,    href: "https://tools.deepoda.com/image/to-pdf",        color: "bg-red-50 text-red-600 dark:bg-red-900/30",             cat: d.categories.image },
+    { icon: FileOutput, ...tools.convert.wordToPdf,     href: "https://tools.deepoda.com/convert/word-to-pdf",     color: "bg-green-50 text-green-600 dark:bg-green-900/30",       cat: d.categories.convert },
     { icon: FileOutput, ...tools.convert.excelToPdf,    href: "https://tools.deepoda.com/convert/excel-to-pdf",    color: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30", cat: d.categories.convert },
-    { icon: FileOutput, ...tools.convert.htmlToPdf,     href: "https://tools.deepoda.com/convert/html-to-pdf",     color: "bg-teal-50 text-teal-600 dark:bg-teal-900/30",      cat: d.categories.convert },
-    { icon: FileOutput, ...tools.convert.markdownToPdf, href: "https://tools.deepoda.com/convert/markdown-to-pdf", color: "bg-lime-50 text-lime-600 dark:bg-lime-900/30",       cat: d.categories.convert },
+    { icon: FileOutput, ...tools.convert.htmlToPdf,     href: "https://tools.deepoda.com/convert/html-to-pdf",     color: "bg-teal-50 text-teal-600 dark:bg-teal-900/30",          cat: d.categories.convert },
+    { icon: FileOutput, ...tools.convert.markdownToPdf, href: "https://tools.deepoda.com/convert/markdown-to-pdf", color: "bg-lime-50 text-lime-600 dark:bg-lime-900/30",          cat: d.categories.convert },
+    { icon: Code,       ...tools.convert.base64,     href: "https://tools.deepoda.com/convert/base64",      color: "bg-violet-50 text-violet-600 dark:bg-violet-900/30",    cat: d.categories.convert },
+    { icon: Braces,     ...tools.convert.jsonFormat, href: "https://tools.deepoda.com/convert/json-format", color: "bg-amber-50 text-amber-600 dark:bg-amber-900/30",       cat: d.categories.convert },
+    { icon: QrCode,     ...tools.convert.qrCode,     href: "https://tools.deepoda.com/convert/qr-code",     color: "bg-slate-50 text-slate-600 dark:bg-slate-800/50",       cat: d.categories.convert },
     { icon: Video,    ...tools.video.compress, href: "https://tools.deepoda.com/video/compress", color: "bg-violet-50 text-violet-600 dark:bg-violet-900/30",    cat: d.categories.video },
     { icon: Scissors, ...tools.video.trim,     href: "https://tools.deepoda.com/video/trim",     color: "bg-fuchsia-50 text-fuchsia-600 dark:bg-fuchsia-900/30", cat: d.categories.video },
     { icon: Music,    ...tools.video.toMp3,    href: "https://tools.deepoda.com/video/to-mp3",   color: "bg-pink-50 text-pink-600 dark:bg-pink-900/30",          cat: d.categories.video },
@@ -243,17 +262,24 @@ export default function HomeClient({ dict }: Props) {
           >
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             <input
+              ref={searchRef}
               type="text"
               value={search}
               onChange={(e) => {
                 const val = e.target.value;
                 setSearch(val);
                 if (val.trim()) {
-                  setTimeout(() => document.getElementById("tools")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+                  setTimeout(() => {
+                    const el = searchRef.current;
+                    if (el) {
+                      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }
+                  }, 80);
                 }
               }}
               placeholder={d.search.placeholder}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl shadow-indigo-100/50 dark:shadow-none text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 text-base transition-all"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 bg-white shadow-xl shadow-indigo-100/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 text-base transition-all"
             />
           </motion.div>
         </div>

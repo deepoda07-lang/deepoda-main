@@ -172,6 +172,31 @@
         "title": "Anotar PDF",
         "desc": "Dibuja, resalta y añade notas de texto a tu PDF.",
         "badge": "Nuevo"
+      },
+      "compress": {
+        "title": "Comprimir PDF",
+        "desc": "Reduce el tamaño del PDF conservando la calidad.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "Rotar PDF",
+        "desc": "Gira las páginas 90°, 180° o 270° en cualquier PDF.",
+        "badge": null
+      },
+      "pageNumber": {
+        "title": "Añadir Números de Página",
+        "desc": "Estampa números de página en cada hoja de tu PDF.",
+        "badge": null
+      },
+      "toJpg": {
+        "title": "PDF → JPG",
+        "desc": "Convierte cada página del PDF a una imagen JPG de alta calidad.",
+        "badge": null
+      },
+      "fromJpg": {
+        "title": "JPG → PDF",
+        "desc": "Combina una o más imágenes JPG en un solo PDF.",
+        "badge": null
       }
     },
     "image": {
@@ -199,6 +224,46 @@
         "title": "Añadir Texto a Imagen",
         "desc": "Haz clic en cualquier parte de la imagen para colocar texto.",
         "badge": "Nuevo"
+      },
+      "resize": {
+        "title": "Redimensionar Imagen",
+        "desc": "Cambia las dimensiones por píxeles o porcentaje.",
+        "badge": null
+      },
+      "crop": {
+        "title": "Recortar Imagen",
+        "desc": "Corta cualquier área rectangular de tu imagen.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "Rotar Imagen",
+        "desc": "Rota o voltea tu imagen en cualquier dirección.",
+        "badge": null
+      },
+      "heicToJpg": {
+        "title": "HEIC → JPG",
+        "desc": "Convierte fotos HEIC de iPhone a JPG al instante.",
+        "badge": null
+      },
+      "exif": {
+        "title": "Visor EXIF",
+        "desc": "Lee y muestra todos los metadatos almacenados en tu foto.",
+        "badge": null
+      },
+      "ocr": {
+        "title": "Imagen a Texto (OCR)",
+        "desc": "Extrae texto de cualquier imagen con tecnología OCR.",
+        "badge": null
+      },
+      "colorPalette": {
+        "title": "Paleta de Colores",
+        "desc": "Extrae la paleta de colores dominantes de cualquier imagen.",
+        "badge": null
+      },
+      "toPdf": {
+        "title": "Imagen → PDF",
+        "desc": "Convierte una o más imágenes en un solo archivo PDF.",
+        "badge": null
       }
     },
     "convert": {
@@ -220,6 +285,21 @@
       "markdownToPdf": {
         "title": "Markdown → PDF",
         "desc": "Convierte texto Markdown a PDF.",
+        "badge": null
+      },
+      "base64": {
+        "title": "Codificar / Decodificar Base64",
+        "desc": "Codifica o decodifica cualquier texto o archivo a Base64.",
+        "badge": null
+      },
+      "jsonFormat": {
+        "title": "Formateador JSON",
+        "desc": "Embellece, minifica y valida JSON al instante.",
+        "badge": null
+      },
+      "qrCode": {
+        "title": "Generador de Código QR",
+        "desc": "Genera un código QR para cualquier URL o texto.",
         "badge": null
       }
     },

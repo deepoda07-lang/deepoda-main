@@ -172,6 +172,31 @@
         "title": "Annotate PDF",
         "desc": "Draw, highlight and add text notes to your PDF.",
         "badge": "New"
+      },
+      "compress": {
+        "title": "Compress PDF",
+        "desc": "Reduce PDF file size while preserving quality.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "Rotate PDF",
+        "desc": "Rotate pages 90°, 180° or 270° in any PDF.",
+        "badge": null
+      },
+      "pageNumber": {
+        "title": "Add Page Numbers",
+        "desc": "Stamp page numbers on every page of your PDF.",
+        "badge": null
+      },
+      "toJpg": {
+        "title": "PDF → JPG",
+        "desc": "Convert each PDF page to a high-quality JPG image.",
+        "badge": null
+      },
+      "fromJpg": {
+        "title": "JPG → PDF",
+        "desc": "Combine one or more JPG images into a single PDF.",
+        "badge": null
       }
     },
     "image": {
@@ -199,6 +224,46 @@
         "title": "Add Text to Image",
         "desc": "Click anywhere on the image to place custom text.",
         "badge": "New"
+      },
+      "resize": {
+        "title": "Resize Image",
+        "desc": "Change image dimensions by pixels or percentage.",
+        "badge": null
+      },
+      "crop": {
+        "title": "Crop Image",
+        "desc": "Cut out any rectangular area from your image.",
+        "badge": null
+      },
+      "rotate": {
+        "title": "Rotate Image",
+        "desc": "Rotate or flip your image in any direction.",
+        "badge": null
+      },
+      "heicToJpg": {
+        "title": "HEIC → JPG",
+        "desc": "Convert iPhone HEIC photos to JPG instantly.",
+        "badge": null
+      },
+      "exif": {
+        "title": "EXIF Viewer",
+        "desc": "Read and display all metadata stored in your photo.",
+        "badge": null
+      },
+      "ocr": {
+        "title": "Image to Text (OCR)",
+        "desc": "Extract text from any image using OCR technology.",
+        "badge": null
+      },
+      "colorPalette": {
+        "title": "Color Palette",
+        "desc": "Extract the dominant color palette from any image.",
+        "badge": null
+      },
+      "toPdf": {
+        "title": "Image → PDF",
+        "desc": "Convert one or more images into a single PDF file.",
+        "badge": null
       }
     },
     "convert": {
@@ -220,6 +285,21 @@
       "markdownToPdf": {
         "title": "Markdown → PDF",
         "desc": "Convert Markdown text to PDF.",
+        "badge": null
+      },
+      "base64": {
+        "title": "Base64 Encode / Decode",
+        "desc": "Encode or decode any text or file to Base64.",
+        "badge": null
+      },
+      "jsonFormat": {
+        "title": "JSON Formatter",
+        "desc": "Beautify, minify and validate JSON instantly.",
+        "badge": null
+      },
+      "qrCode": {
+        "title": "QR Code Generator",
+        "desc": "Generate a QR code for any URL or text.",
         "badge": null
       }
     },
