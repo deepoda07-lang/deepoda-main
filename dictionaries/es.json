@@ -197,6 +197,11 @@
         "title": "JPG → PDF",
         "desc": "Combina una o más imágenes JPG en un solo PDF.",
         "badge": null
+      },
+      "organize": {
+        "title": "Organizar Páginas PDF",
+        "desc": "Reordena, gira, elimina y extrae páginas de PDF.",
+        "badge": null
       }
     },
     "image": {

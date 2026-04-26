@@ -197,6 +197,11 @@
         "title": "JPG → PDF",
         "desc": "Bir veya birden fazla JPG görselini tek PDF'e dönüştür.",
         "badge": null
+      },
+      "organize": {
+        "title": "PDF Sayfaları Düzenle",
+        "desc": "PDF sayfalarını yeniden sırala, döndür, sil ve çıkar.",
+        "badge": null
       }
     },
     "image": {

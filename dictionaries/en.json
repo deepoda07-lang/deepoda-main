@@ -197,6 +197,11 @@
         "title": "JPG → PDF",
         "desc": "Combine one or more JPG images into a single PDF.",
         "badge": null
+      },
+      "organize": {
+        "title": "Organize PDF Pages",
+        "desc": "Reorder, rotate, delete and extract PDF pages.",
+        "badge": null
       }
     },
     "image": {

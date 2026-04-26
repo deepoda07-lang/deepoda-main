@@ -8,7 +8,7 @@ import {
   Edit3, Stamp, PenTool, Video, Music, Film, Link,
   VolumeX, RotateCw, Lock, LockOpen, ChevronRight, Sparkles,
   Minimize2, Hash, ImageDown, Images, Maximize2, Crop,
-  Smartphone, Info, ScanText, Palette, FileImage, Code, Braces, QrCode,
+  Smartphone, Info, ScanText, Palette, FileImage, Code, Braces, QrCode, LayoutGrid,
 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
@@ -167,6 +167,7 @@ export default function HomeClient({ dict }: Props) {
     { icon: Scissors,   ...tools.pdf.crop,       href: "https://tools.deepoda.com/pdf/crop",            color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.pdf },
     { icon: Edit3,      ...tools.pdf.formFill,   href: "https://tools.deepoda.com/pdf/form-fill",       color: "bg-teal-50 text-teal-600 dark:bg-teal-900/30",          cat: d.categories.pdf },
     { icon: PenTool,    ...tools.pdf.annotate,   href: "https://tools.deepoda.com/pdf/annotate",        color: "bg-violet-50 text-violet-600 dark:bg-violet-900/30",    cat: d.categories.pdf },
+    { icon: LayoutGrid, ...tools.pdf.organize,   href: "https://tools.deepoda.com/pdf/organize",        color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30",    cat: d.categories.pdf },
     { icon: Image,      ...tools.image.compress, href: "https://tools.deepoda.com/image/compress",      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30",          cat: d.categories.image },
     { icon: Maximize2,  ...tools.image.resize,   href: "https://tools.deepoda.com/image/resize",        color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30",    cat: d.categories.image },
     { icon: Crop,       ...tools.image.crop,     href: "https://tools.deepoda.com/image/crop",          color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30",    cat: d.categories.image },
